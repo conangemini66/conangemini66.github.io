@@ -155,6 +155,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Android逆向学习-smali" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/Android%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0-smali/">Android逆向学习-smali</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/30/Android%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0-smali/" class="archive-article-date">
+  	<time datetime="2019-10-30T08:23:59.676Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: Android逆向学习-smali<br>date: 2019-10-30 16:23:59<br>tags:<br>翻开以前参加比赛没做出来一个逆向app程序</p>
+<p><img src="https://note.youdao.com/yws/public/resource/dfc72618e51565e4f2c6eeb086544916/xmlnote/CABEC317553F4625928DF9AF04124366/18" alt="avatar"></p>
+<p>胡乱翻了一下文件结构 百度查看各文件夹详细介绍</p>
+<p>assets文件夹<br>保存一些额外的资源文件，如游戏的声音文件，字体文件等等，在代码中可以用AssetManager获取assets文件夹的资源</p>
+<p>lib文件夹<br>存放用C/C++编写的，用NDK编译生成的so文件，供java端调用。</p>
+<p>META-INF文件夹<br>存放apk签名信息，用来保证apk包的完整性和系统的安全。<br>在IDE编译生成一个apk包时，会对里面所有的文件做一个校验计算，并把计算结果存放在META-INF文件夹内，apk在安装的时候，系统会按照同样的算法对apk包里面的文件做校验，如果结果与META-INF里面的值不一样，系统就不会安装这个apk，这就保证了apk包里的文件不能被随意替换。比如拿到一个apk包后，如果想要替换里面的一幅图片，一段代码， 或一段版权信息，想直接解压缩、替换再重新打包，基本是不可能的。如此一来就给病毒感染和恶意修改增加了难度，有助于保护系 统的安全。</p>
+<p>res文件夹<br>存放资源文件，包括icon，xml文件</p>
+<p>AndroidManifest.xml文件<br>应用程序配置文件，每个应用都必须定义和包含的，它描述了应用的名字、版本、权限、引用的库文件等信息。</p>
+<p>classes.dex文件<br>可以直接在Dalvik虚拟机上加载运行的文件，由java文件经过IDE编译生成。Dalvik虚拟机的指令码不是标准的Jvm指令码，而是使用了自己独有的一套指令集（类似汇编语言），这个也是我们今天要讲的重点。dex文件中共用了很多类名称，常量字符串，使它的体积更小，运行效率更高。</p>
+<p>resources.arsc文件<br>二进制资源文件，包括字符串等。</p>
+<p>smali文件夹<br>Dalvik虚拟机和Jvm一样，也有自己的一套指令集，类似汇编语言，但是比汇编简单许多，只要你会java，了解android的相关知识，就可以轻松的看懂，如果得到这些汇编文件呢，利用apktool或者dex2jar工具包(网上很多)，反编译classes.dex文件，就可以得到以smali为后缀的文件，这些smali文件就是Dalvik的寄存器语言。</p>
+<p>Smali文件结构解<br>  Smali文件与java中的类是一一对应的，包括内部类和匿名内部类也会生成对应的smali文件（典型的比如实现某个接口的匿名内部类），所以你会看到.smali文件比.java文件更多。<br>smali文件是由Dalvik指令组成的，它有自己的一套规则，它的指令都是以“.”开头，常用的指令如下：</p>
+<p><img src="https://note.youdao.com/yws/public/resource/dfc72618e51565e4f2c6eeb086544916/xmlnote/58C1412728C246C591A6E18B7AC17DAF/16" alt="avatar"></p>
+<p>smali文件的结构：</p>
+<p><img src="https://note.youdao.com/yws/public/resource/dfc72618e51565e4f2c6eeb086544916/xmlnote/944CED1BB0074947AB28F4DB9AA5FF8E/17" alt="avatar"></p>
+<p> .class &lt;访问权限修饰符&gt; [非权限修饰符] &lt;类名&gt; </p>
+<p>.super &lt;父类名&gt; </p>
+<p>.source &lt;源文件名称&gt; </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/30/Android%E9%80%86%E5%90%91%E5%AD%A6%E4%B9%A0-smali/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Conan-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
