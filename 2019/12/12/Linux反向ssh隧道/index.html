@@ -20,7 +20,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93&#x2F;3.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93&#x2F;4.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93&#x2F;5.png">
-<meta property="og:updated_time" content="2019-12-13T02:47:06.359Z">
+<meta property="og:updated_time" content="2020-02-10T03:27:03.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93&#x2F;1.png">
   
@@ -185,10 +185,16 @@
         <p>A主机 内网主机<br>B主机 公网主机</p>
 <a id="more"></a>
 
-<p>A内网主机执行<br>ssh -p2222(公网主机ssh端口) -qngfNTR 9999(公网主机连接端口)：xxx.xxx.xxx.xxx(内网机IP):22(内网机端口)  xxxx(公网主机用户名)@xx.xxx.xx.xx(公网主机ip)</p>
-<p>ssh -p2222 -qngfNTR 9999:192.168.233.132:22 <a href="mailto:ubuntu@xxx.xxx.xxx.xxx" target="_blank" rel="noopener">ubuntu@xxx.xxx.xxx.xxx</a> 该模式为交互模式需要输入公网主机密码</p>
+<ul>
+<li><p>A内网主机执行<br>ssh -p2222(公网主机ssh端口) -qngfNTR 9999(公网主机连接端口)：xxx.xxx.xxx.xxx(内网机IP):22(内网机端口)  xxxx(公网主机用户名)@xx.xxx.xx.xx(公网主机ip)</p>
+</li>
+<li><p>ssh -p2222 -qngfNTR 9999:192.168.233.132:22 <a href="mailto:ubuntu@xxx.xxx.xxx.xxx" target="_blank" rel="noopener">ubuntu@xxx.xxx.xxx.xxx</a> 该模式为交互模式需要输入公网主机密码</p>
+</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/1.png" alt="avatar"></p>
-<p>B公网主机执行<br>ssh -p 9999 <a href="mailto:root@127.0.0.1" target="_blank" rel="noopener">root@127.0.0.1</a>   该模式为交互模式需要输入内网主机密码</p>
+<ul>
+<li>B公网主机执行<br>ssh -p 9999 <a href="mailto:root@127.0.0.1" target="_blank" rel="noopener">root@127.0.0.1</a>   该模式为交互模式需要输入内网主机密码</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/2.png" alt="avatar"></p>
 <p>成功连接内网主机<br><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/3.png" alt="avatar"></p>
 <p>测试使用ssh-keygen以后是否需要交互<br><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%8F%8D%E5%90%91ssh%E9%9A%A7%E9%81%93/4.png" alt="avatar"></p>

