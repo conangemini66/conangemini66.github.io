@@ -155,29 +155,41 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Weblogic实战记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Shiro反序列化漏洞实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">Weblogic实战记录</a>
+      <a class="article-title" href="/2020/02/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">shiro反序列化漏洞实验</a>
     </h1>
   
 
         
-        <a href="/2020/01/21/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-01-21T08:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/02/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
+  	<time datetime="2020-02-21T02:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Weblogic shell 实战记录</p>
+        <p><strong>shiro反序列化漏洞实验</strong></p>
+<p>shiro（java安全框架）</p>
+<p>Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。</p>
+<p>Shiro提供了记住我（RememberMe）的功能，关闭了浏览器下次再打开时还是能记住你是谁，下次访问时无需再登录即可访问。</p>
+<p>Shiro对rememberMe的cookie做了加密处理，shiro在CookieRememberMeManaer类中将cookie中rememberMe字段内容分别进行 序列化、AES加密、Base64编码操作。</p>
+<p>在识别身份的时候，需要对Cookie里的rememberMe字段解密。根据加密的顺序，不难知道解密的顺序为：</p>
+<ul>
+<li>获取rememberMe cookie</li>
+<li>base64 decode</li>
+<li>解密AES</li>
+<li>反序列化</li>
+</ul>
+<p>但是，AES加密的密钥Key被硬编码在代码里，意味着每个人通过源代码都能拿到AES加密的密钥。因此，攻击者构造一个恶意的对象，并且对其序列化，AES加密，base64编码后，作为cookie的rememberMe字段发送。Shiro将rememberMe进行解密并且反序列化，最终造成反序列化漏洞。</p>
         
-          <a class="article-more-a" href="/2020/01/21/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/#more">more >></a>
         
       
 
@@ -190,7 +202,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
         </p>
       
 
@@ -220,29 +232,29 @@
 
 
   
-    <article id="post-Shiro反弹shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Weblogic实战记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Shiro%E5%8F%8D%E5%BC%B9shell/">shiro反弹shell</a>
+      <a class="article-title" href="/2020/02/13/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">Weblogic实战记录</a>
     </h1>
   
 
         
-        <a href="/2020/01/21/Shiro%E5%8F%8D%E5%BC%B9shell/" class="archive-article-date">
-  	<time datetime="2020-01-21T07:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/02/13/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-02-13T08:16:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>shiro反序列化漏洞反弹shell</p>
+        <p>Weblogic shell 实战记录</p>
         
-          <a class="article-more-a" href="/2020/01/21/Shiro%E5%8F%8D%E5%BC%B9shell/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/13/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/#more">more >></a>
         
       
 
@@ -255,7 +267,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Shiro%E5%8F%8D%E5%BC%B9shell/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/13/Weblogic%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">展开全文 >></a>
         </p>
       
 
@@ -292,13 +304,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">Jenkins未授权访问漏洞</a>
+      <a class="article-title" href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">Jenkins未授权访问漏洞</a>
     </h1>
   
 
         
-        <a href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/" class="archive-article-date">
+  	<time datetime="2020-02-12T06:52:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
 </a>
         
       </header>
@@ -309,7 +321,7 @@
 <p>未授权访问管理控制台,可以通过脚本命令行执行系统命令。</p>
 <p>通过该漏洞,可以后台管理服务,通过脚本命令行功能执行系统命令,如反弹shell,wget写webshell文件。 </p>
         
-          <a class="article-more-a" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/#more">more >></a>
         
       
 
@@ -322,7 +334,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/12/Jenkins%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/">展开全文 >></a>
         </p>
       
 
@@ -352,41 +364,29 @@
 
 
   
-    <article id="post-Shiro反序列化漏洞实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Shiro反弹shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">shiro反序列化漏洞实验</a>
+      <a class="article-title" href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/">shiro反弹shell</a>
     </h1>
   
 
         
-        <a href="/2020/01/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-01-21T06:43:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+        <a href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/" class="archive-article-date">
+  	<time datetime="2020-02-11T07:03:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>shiro反序列化漏洞实验</strong></p>
-<p>shiro（java安全框架）</p>
-<p>Apache Shiro是一个强大且易用的Java安全框架,执行身份验证、授权、密码和会话管理。使用Shiro的易于理解的API,您可以快速、轻松地获得任何应用程序,从最小的移动应用程序到最大的网络和企业应用程序。</p>
-<p>Shiro提供了记住我（RememberMe）的功能，关闭了浏览器下次再打开时还是能记住你是谁，下次访问时无需再登录即可访问。</p>
-<p>Shiro对rememberMe的cookie做了加密处理，shiro在CookieRememberMeManaer类中将cookie中rememberMe字段内容分别进行 序列化、AES加密、Base64编码操作。</p>
-<p>在识别身份的时候，需要对Cookie里的rememberMe字段解密。根据加密的顺序，不难知道解密的顺序为：</p>
-<ul>
-<li>获取rememberMe cookie</li>
-<li>base64 decode</li>
-<li>解密AES</li>
-<li>反序列化</li>
-</ul>
-<p>但是，AES加密的密钥Key被硬编码在代码里，意味着每个人通过源代码都能拿到AES加密的密钥。因此，攻击者构造一个恶意的对象，并且对其序列化，AES加密，base64编码后，作为cookie的rememberMe字段发送。Shiro将rememberMe进行解密并且反序列化，最终造成反序列化漏洞。</p>
+        <p>shiro反序列化漏洞反弹shell</p>
         
-          <a class="article-more-a" href="/2020/01/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/#more">more >></a>
+          <a class="article-more-a" href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/#more">more >></a>
         
       
 
@@ -399,7 +399,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/Shiro%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/11/Shiro%E5%8F%8D%E5%BC%B9shell/">展开全文 >></a>
         </p>
       
 
