@@ -155,6 +155,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux命令下Mysql数据库的导入与导出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/">Linux命令下Mysql数据库的导入与导出</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/" class="archive-article-date">
+  	<time datetime="2020-09-02T09:08:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux主要通过MySql和mysqldump命令执行数据库导出操作</p>
+<p>Mysql连接参数</p>
+<ul>
+<li>“-u$USER”                                         表示用户名</li>
+<li>“-p$PASSWD”                      表示密码</li>
+<li>“-h127.0.0.1”                      表示如果远程连接服务器 IP</li>
+<li>“-P3306”                                             表示端口</li>
+<li>“–default-character-set=utf8”             表示指定字符集</li>
+<li>“–skip-column-names”                       表示不显示数据列的名字</li>
+<li>“-B”                                                     表示不显示数据列的名字</li>
+<li>“-e”                                                      表示执行命令后退出</li>
+</ul>
+<p>Mysqldump参数</p>
+<ul>
+<li>“-A”                                           表示全库备份</li>
+<li>“–routines”                                          表示备份存储过程和函数</li>
+<li>“–default-character-set=utf8”              用于设置字符集</li>
+<li>“–lock-all-tables”                                 表示全局一致性锁</li>
+<li>“–add-drop-database”                         表示在每次执行建表语句前执行”DROP TABLE IF </li>
+<li>“-skip-lock-tables”                                表示跳过锁定数据库</li>
+</ul>
+<p>EXISET”语句</p>
+<ul>
+<li><p>“–no-create-db”                                   表示不输出“CREATE DATABASE”语句</p>
+</li>
+<li><p>“–no-create-info”                                 表示不输出“CREATE TABLE”语句</p>
+</li>
+<li><p>“–databases”                                       表示将后面的参数都解析为库名</p>
+</li>
+<li><p>“–tables”                                              表示第一个参数为库名 后续为表名</p>
+        
+          <a class="article-more-a" href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python反弹shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -740,74 +834,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux防御篇-第三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/">Linux防御篇-第三章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-09-02T07:59:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Inotify监控文件系统</p>
-<p>​      Inotify 是一个 Linux特性，它监控文件系统操作，比如读取、写入和创建。Inotify 反应灵敏，用法非常简单，并且比 cron 任务的繁忙轮询高效得多。学习如何将 inotify 集成到您的应用程序中，并发现一组可用来进一步自动化系统治理的命令行工具。</p>
-<p>​     可以实时监控 单个文件以及整个目录所发生的改变 如果发现任何更改 会向配置软件发信号。如果用户空间软件被更改 那么inotify会将其视为一个事件并马上报告。</p>
-<p>​      inotify通过监听文件或目录事件的改变，对数据进行备份，基于shell脚本进行实现。</p>
-        
-          <a class="article-more-a" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/">展开全文 >></a>
         </p>
       
 

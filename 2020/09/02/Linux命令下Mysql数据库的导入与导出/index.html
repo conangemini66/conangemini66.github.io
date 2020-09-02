@@ -6,14 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | ConanStudio</title>
+  <title>Linux命令下Mysql数据库的导入与导出 | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConanStudio">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="Linux主要通过MySql和mysqldump命令执行数据库导出操作 Mysql连接参数  “-u$USER”                                         表示用户名 “-p$PASSWD”                      表示密码 “-h127.0.0.1”                      表示如果远程连接服务器 IP “-P3306”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux命令下Mysql数据库的导入与导出">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;02&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
+<meta property="og:description" content="Linux主要通过MySql和mysqldump命令执行数据库导出操作 Mysql连接参数  “-u$USER”                                         表示用户名 “-p$PASSWD”                      表示密码 “-h127.0.0.1”                      表示如果远程连接服务器 IP “-P3306”">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;1.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;2.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;3.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;4.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;5.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;6.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;10.png">
+<meta property="og:updated_time" content="2020-09-02T09:16:10.820Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;conanstudio-1300441002.cos.ap-chengdu.myqcloud.com&#x2F;Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
   
@@ -153,295 +167,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Linux命令下Mysql数据库的导入与导出" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Linux命令下Mysql数据库的导入与导出
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/" class="archive-article-date">
+
+        
+        <a href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/" class="archive-article-date">
   	<time datetime="2020-09-02T09:08:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/">Linux命令下Mysql数据库的导入与导出</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux主要通过MySql和mysqldump命令执行数据库导出操作</p>
+<p>Mysql连接参数</p>
+<ul>
+<li>“-u$USER”                                         表示用户名</li>
+<li>“-p$PASSWD”                      表示密码</li>
+<li>“-h127.0.0.1”                      表示如果远程连接服务器 IP</li>
+<li>“-P3306”                                             表示端口</li>
+<li>“–default-character-set=utf8”             表示指定字符集</li>
+<li>“–skip-column-names”                       表示不显示数据列的名字</li>
+<li>“-B”                                                     表示不显示数据列的名字</li>
+<li>“-e”                                                      表示执行命令后退出</li>
+</ul>
+<p>Mysqldump参数</p>
+<ul>
+<li>“-A”                                           表示全库备份</li>
+<li>“–routines”                                          表示备份存储过程和函数</li>
+<li>“–default-character-set=utf8”              用于设置字符集</li>
+<li>“–lock-all-tables”                                 表示全局一致性锁</li>
+<li>“–add-drop-database”                         表示在每次执行建表语句前执行”DROP TABLE IF </li>
+<li>“-skip-lock-tables”                                表示跳过锁定数据库</li>
+</ul>
+<p>EXISET”语句</p>
+<ul>
+<li><p>“–no-create-db”                                   表示不输出“CREATE DATABASE”语句</p>
+</li>
+<li><p>“–no-create-info”                                 表示不输出“CREATE TABLE”语句</p>
+</li>
+<li><p>“–databases”                                       表示将后面的参数都解析为库名</p>
+</li>
+<li><p>“–tables”                                              表示第一个参数为库名 后续为表名</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+</li>
+</ul>
+<p>导出全库 备份到本地目录：</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –lock-all-tables –add-drop-database -A &gt; db.all.sql（备份文件名）</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/1.png" alt="img"></p>
+<p>全库备份导出完毕</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/2.png" alt="img"></p>
+<p>导出指定库到本地目录：</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –lock-all-tables –add-drop-database sc（数据库名） &gt; db.sc.sql（备份文件名）</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/3.png" alt="img"></p>
+<p>指定库导出完毕</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/4.png" alt="img"></p>
+<p>导出某个库的表到本地目录</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –lock-all-tables  sc（数据库名）player (表名)&gt; sc.player.sql（备份文件名）</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/5.png" alt="img"></p>
+<p>备份某库某表完毕</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/6.png" alt="img"></p>
+<p>导出指定库的表（仅数据）到本地目录：</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –lock-all-tables –no-create-db –no-create-info –tables sc player –where=”host=’localhost’” (过滤条件 可以不带)&gt;sc.play.sql</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/7.png" alt="img"></p>
+<p>仅导出数据完毕</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/8.png" alt="img"></p>
+<p>导出某个库的所有表结构：</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –no-data –databases sc &gt;db.nodatasc.sql</li>
+</ul>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/9.png" alt="img"></p>
+<p>仅导出数据库表结构完毕</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/10.png" alt="img"></p>
+<p>导出某个查询SQL的数据为txt文件 并存储到本地目录 各数据之间用制表符分隔：</p>
+<ul>
+<li>mysqldump -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 –skip-column-names -B -e ‘select user,host,password form sc.player;’  &gt;sc_player.txt</li>
+</ul>
+<p>导出时合理使用 “-e”等参数 可以大大提高导入的速度</p>
+<p>Linux下Mysql数据库导入命令：</p>
+<p>Mysql命令导入</p>
+<ul>
+<li>mysql -u用户名-p密码 -hIP -P端口 –routines –default-character-set=utf8 &lt; db.all.sql</li>
+</ul>
+<p>使用source 路径导入</p>
+<ul>
+<li>mysql &gt; source /root/xxx.sql;</li>
+</ul>
+<p>导入txt文件</p>
+<ul>
+<li>use 数据库</li>
+<li>LOAD DATA INFILE ‘/root/xxx.txt’ INTO TABLE xxxxx;</li>
+</ul>
+<p>导入csv文件</p>
+<ul>
+<li>use 数据库</li>
+<li>LOAD DATA INFILE ‘/root/xxx.txt’ INTO TABLE xxxxx user FIELDS TERMINATEDBY ‘,’;</li>
+</ul>
+<p>导出库不影响业务</p>
+<p>mysqldump  -uxxxx -pxxxx  -h10.0.102.105 –skip-lock-tables –databases  crm  –ignore-table=crm.log_login_fail_backup –ignore-table=crm.mt_pending_accumulative_amount_temp –ignore-table=crm.jl_message_receiver –ignore-table=crm.ag_bet_table_result –ignore-table=crm.loto_result | pv -q -L2m &gt; wz.sql</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/02/Linux%E5%91%BD%E4%BB%A4%E4%B8%8BMysql%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5%E4%B8%8E%E5%AF%BC%E5%87%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/" class="archive-article-date">
-  	<time datetime="2020-09-02T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python反弹shell</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/">python反弹shell</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:56:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/">制作Python版Jar包实验</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:46:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/">本地-CPL实验</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:34:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/">Rootkit及后门实验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/">Adobe flash player 28（CVE-2018-4878）攻击实验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:15:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">Holer内网穿透搭建记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:13:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/">绕过WAF的各种特性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:12:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/">XSS绕过技术</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:05:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">内网渗透命令备忘</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -465,8 +433,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
